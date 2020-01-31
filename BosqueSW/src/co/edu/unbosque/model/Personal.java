@@ -25,7 +25,7 @@ public abstract class Personal {
 		this.direccion = direccion;
 		this.anio = anio;
 	}
-	public abstract void calcularSalario();
+	public abstract double calcularSalario();
 	public String getCedula() {
 		return cedula;
 	}

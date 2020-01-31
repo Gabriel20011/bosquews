@@ -11,7 +11,8 @@ public class Comission extends Personal {
 	}
 
 	@Override
-	public void calcularSalario() {
+	public double calcularSalario() {
+		return 0;
 		// TODO Auto-generated method stub
 		
 	}
