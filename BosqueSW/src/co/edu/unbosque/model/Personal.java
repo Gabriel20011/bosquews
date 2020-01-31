@@ -10,10 +10,10 @@ public abstract class Personal {
 	private double salarioBase;
 	private String correo;
 	private String direccion;
-	private int año;
+	private int anio;
 	
 	public Personal(String cedula, String nombre, String apellido, char genero, String telefono, double salarioBase,
-			String correo, String direccion, int año) {
+			String correo, String direccion, int anio) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
@@ -23,7 +23,7 @@ public abstract class Personal {
 		this.salarioBase = salarioBase;
 		this.correo = correo;
 		this.direccion = direccion;
-		this.año = año;
+		this.anio = anio;
 	}
 	public abstract void calcularSalario();
 	public String getCedula() {
@@ -74,10 +74,10 @@ public abstract class Personal {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public int getAño() {
-		return año;
+	public int getAnio() {
+		return anio;
 	}
-	public void setAño(int año) {
-		this.año = año;
+	public void setAnio(int anio) {
+		this.anio = anio;
 	}
 }
