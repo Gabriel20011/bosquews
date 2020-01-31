@@ -7,13 +7,15 @@ public class Comission extends Personal {
 	public Comission(String cedula, String nombre, String apellido, char genero, String telefono, double salarioBase,
 			String correo, String direccion, int año) {
 		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, año);
-		// TODO Auto-generated constructor stub
 	}
-
-	@Override
+	
 	public void calcularSalario() {
-		// TODO Auto-generated method stub
 		
 	}
-
+	public int getnCliente() {
+		return nCliente;
+	}
+	public void setnCliente(int nCliente) {
+		this.nCliente = nCliente;
+	}
 }
