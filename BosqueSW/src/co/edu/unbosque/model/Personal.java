@@ -1,6 +1,6 @@
 package co.edu.unbosque.model;
 
-public class Personal {
+public abstract class Personal {
 	
 	private String cedula;
 	private String nombre;
@@ -25,9 +25,7 @@ public class Personal {
 		this.direccion = direccion;
 		this.año = año;
 	}
-	public void calcularSalario() {
-		
-	}
+	public abstract void calcularSalario();
 	public String getCedula() {
 		return cedula;
 	}
