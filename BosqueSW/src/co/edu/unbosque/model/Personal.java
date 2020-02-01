@@ -2,30 +2,17 @@ package co.edu.unbosque.model;
 
 public abstract class Personal {
 	
-	private String cedula;
-	private String nombre;
-	private String apellido;
-	private char genero;
-	private String telefono;
-	private double salarioBase;
-	private String correo;
-	private String direccion;
-	private int año;
-	
-	public Personal(String cedula, String nombre, String apellido, char genero, String telefono, double salarioBase,
-			String correo, String direccion, int año) {
-		super();
-		this.cedula = cedula;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.genero = genero;
-		this.telefono = telefono;
-		this.salarioBase = salarioBase;
-		this.correo = correo;
-		this.direccion = direccion;
-		this.año = año;
-	}
-	public abstract void calcularSalario();
+	protected String cedula;
+	protected String nombre;
+	protected String apellido;
+	protected char genero;
+	protected String telefono;
+	protected double salarioBase;
+	protected String correo;
+	protected String direccion;
+	protected int año;
+
+	public abstract double calcularSalario();
 	public String getCedula() {
 		return cedula;
 	}
