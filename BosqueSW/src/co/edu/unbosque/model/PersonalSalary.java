@@ -1,6 +1,7 @@
 package co.edu.unbosque.model;
+import java.io.Serializable;
 import java.util.Calendar;
-public abstract class PersonalSalary extends Personal{
+public abstract class PersonalSalary extends Personal implements Serializable{
 	
 	public PersonalSalary(String cedula, String nombre, String apellido, char genero, String telefono,
 			double salarioBase, String correo, String direccion, int anio) {

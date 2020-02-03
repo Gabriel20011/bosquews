@@ -1,5 +1,8 @@
 package co.edu.unbosque.model;
-public class EngenieerSenior extends PersonalSalary {
+
+import java.io.Serializable;
+
+public class EngenieerSenior extends PersonalSalary implements Serializable {
 
 	public EngenieerSenior(String cedula, String nombre, String apellido, char genero, String telefono,
 			double salarioBase, String correo, String direccion, int anio) {
