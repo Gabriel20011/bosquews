@@ -14,7 +14,6 @@ public abstract class Personal {
 	
 	public Personal(String cedula, String nombre, String apellido, char genero, String telefono, double salarioBase,
 			String correo, String direccion, int anio) {
-		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -25,6 +24,7 @@ public abstract class Personal {
 		this.direccion = direccion;
 		this.anio = anio;
 	}
+
 	public abstract double calcularSalario();
 	public String getCedula() {
 		return cedula;
@@ -76,8 +76,5 @@ public abstract class Personal {
 	}
 	public int getAnio() {
 		return anio;
-	}
-	public void setAnio(int anio) {
-		this.anio = anio;
 	}
 }
