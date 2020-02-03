@@ -1,5 +1,4 @@
 package co.edu.unbosque.model;
-
 public class EngenieerSenior extends PersonalSalary {
 
 	private int nVentas;
@@ -33,13 +32,10 @@ public class EngenieerSenior extends PersonalSalary {
 		}
 		return salarioBase;
 	}
-
 	public int getnVentas() {
 		return nVentas;
 	}
-
 	public void setnVentas(int nVentas) {
 		this.nVentas = nVentas;
 	}
-	
 }

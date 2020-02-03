@@ -1,5 +1,4 @@
 package co.edu.unbosque.model;
-
 public class EngenieerJunior extends PersonalSalary {
 
 	private int level;

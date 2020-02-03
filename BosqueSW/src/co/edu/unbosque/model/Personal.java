@@ -10,7 +10,7 @@ public abstract class Personal {
 	protected double salarioBase;
 	protected String correo;
 	protected String direccion;
-	protected int año;
+	protected int anio;
 
 	public abstract double calcularSalario();
 	public String getCedula() {
@@ -61,10 +61,10 @@ public abstract class Personal {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public int getAño() {
-		return año;
+	public int getAnio() {
+		return anio;
 	}
-	public void setAño(int año) {
-		this.año = año;
+	public void setAnio(int año) {
+		this.anio = año;
 	}
 }

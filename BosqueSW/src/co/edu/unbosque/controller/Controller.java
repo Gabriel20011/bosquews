@@ -6,7 +6,7 @@ public class Controller {
 	
 	public Controller() {
 		m = new Mundo();
-		m.geteSenior().setAño(2019);
+		m.geteSenior().setAnio(2019);
 		m.geteSenior().calcularAntiguedad();
 		System.out.println(m.geteSenior().calcularSalario());
 	}
