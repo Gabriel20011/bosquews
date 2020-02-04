@@ -2,13 +2,20 @@ package co.edu.unbosque.model;
 
 public class PersonalComission extends Personal {
 	private double venta;
+	
+	public PersonalComission(String cedula, String nombre, String apellido, char genero, String telefono,
+			double salarioBase, String correo, String direccion, int anio, double venta) {
+		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
+		this.venta = venta;
+		// TODO Auto-generated constructor stub
+	}
 
 	public double calcularSalario() {
-		salarioBase = 1100000;
+		setSalarioBase(1100000);
 		if(venta>=800000) {
-			salarioBase += venta;
+			setSalarioBase(getSalarioBase() + venta);
 		}
-		return salarioBase;
+		return getSalarioBase();
 	}
 	public double getVenta() {
 		return venta;

@@ -3,28 +3,36 @@ public class EngenieerJunior extends PersonalSalary {
 
 	private int level;
 
+	public EngenieerJunior(String cedula, String nombre, String apellido, char genero, String telefono,
+			double salarioBase, String correo, String direccion, int anio, int level) {
+		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
+		this.level = level;
+		// TODO Auto-generated constructor stub
+	}
+	
+
 	@Override
 	public double calcularSalario() {
-		salarioBase = 3500000;
+		setSalarioBase(3500000);
 		if(calcularAntiguedad()>=2 && calcularAntiguedad()<4) {
-			salarioBase += (salarioBase*5)/100;
+			setSalarioBase(getSalarioBase() * 5 / 100);
 		}
 		if(calcularAntiguedad()>=4 && calcularAntiguedad()<8) {
-			salarioBase += (salarioBase*10)/100;
+			setSalarioBase(getSalarioBase() * 10 / 100);
 		}
 		if(calcularAntiguedad()>=8 && calcularAntiguedad()<16) {
-			salarioBase += (salarioBase*15)/100;
+			setSalarioBase(getSalarioBase() * 15 / 100);
 		}
 		if(calcularAntiguedad()>15) {
-			salarioBase += (salarioBase*20)/100;
+			setSalarioBase(getSalarioBase() * 20 / 100);
 		}
 		if(level>1 && level<=3) {
-			salarioBase += (salarioBase*5)/100;
+			setSalarioBase(getSalarioBase() * 5 / 100);
 		}
 		if(level>3 && level<=5) {
-			salarioBase += (salarioBase*8)/100;
+			setSalarioBase(getSalarioBase() * 8 / 100);
 		}
-		return salarioBase;		
+		return getSalarioBase();		
 	}
 	public int getLevel() {
 		return level;

@@ -1,36 +1,41 @@
 package co.edu.unbosque.model;
 public class EngenieerSenior extends PersonalSalary {
 
+	public EngenieerSenior(String cedula, String nombre, String apellido, char genero, String telefono,
+			double salarioBase, String correo, String direccion, int anio) {
+		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
+		// TODO Auto-generated constructor stub
+	}
 	private int nVentas;
 
 	@Override
 	public double calcularSalario() {
-		salarioBase = 3500000;
+		setSalarioBase(3500000);
 		if(calcularAntiguedad()>=2 && calcularAntiguedad()<4) {
-			salarioBase += (salarioBase*5)/100;
+			setSalarioBase(getSalarioBase() * 5 / 100);
 		}
 		if(calcularAntiguedad()>=4 && calcularAntiguedad()<8) {
-			salarioBase += (salarioBase*10)/100;
+			setSalarioBase(getSalarioBase() * 10 / 100);
 		}
 		if(calcularAntiguedad()>=8 && calcularAntiguedad()<16) {
-			salarioBase += (salarioBase*15)/100;
+			setSalarioBase(getSalarioBase() * 15 / 100);
 		}
 		if(calcularAntiguedad()>15) {
-			salarioBase += (salarioBase*20)/100;
+			setSalarioBase(getSalarioBase() * 20 / 100);
 		}
 		if(nVentas>0 && nVentas<=5) {
-			salarioBase += (salarioBase*10)/100;
+			setSalarioBase(getSalarioBase() * 10 / 100);
 		}
 		if(nVentas>5 && nVentas<=10) {
-			salarioBase += (salarioBase*15)/100;
+			setSalarioBase(getSalarioBase() * 10 / 100);
 		}
 		if(nVentas>10 && nVentas<=20) {
-			salarioBase += (salarioBase*20)/100;
+			setSalarioBase(getSalarioBase() * 20 / 100);
 		}
 		if(nVentas>20) {
-			salarioBase += (salarioBase*30)/100;
+			setSalarioBase(getSalarioBase() * 30 / 100);
 		}
-		return salarioBase;
+		return getSalarioBase();
 	}
 	public int getnVentas() {
 		return nVentas;

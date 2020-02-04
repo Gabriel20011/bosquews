@@ -1,25 +1,44 @@
 package co.edu.unbosque.model;
+import java.util.ArrayList;
 
 public class Mundo  {
-	private EngenieerJunior eJunior;
-	private EngenieerSenior eSenior;
-	private PersonalComission pComission;
-	
+	//E stands for employees
+	//P stands for personal
+	private ArrayList<EngenieerJunior> eJunior;
+	private ArrayList<EngenieerSenior> eSenior;
+	private ArrayList<PersonalComission> pComission;
+	private ArrayList<Personal> personal;
 	public Mundo() {
-		eJunior = new EngenieerJunior();
-		eSenior = new EngenieerSenior();
+		
+		eJunior = new ArrayList<EngenieerJunior>();
+		eSenior = new ArrayList<EngenieerSenior>();
+		pComission = new ArrayList<PersonalComission>();
+		personal = new ArrayList<Personal>();	
 	}
-
-	public EngenieerJunior geteJunior() {
+	public ArrayList<EngenieerJunior> geteJunior() {
 		return eJunior;
 	}
-	public void seteJunior(EngenieerJunior eJunior) {
+	public void seteJunior(ArrayList<EngenieerJunior> eJunior) {
 		this.eJunior = eJunior;
 	}
-	public EngenieerSenior geteSenior() {
+	public ArrayList<EngenieerSenior> geteSenior() {
 		return eSenior;
 	}
-	public void seteSenior(EngenieerSenior eSenior) {
+	public void seteSenior(ArrayList<EngenieerSenior> eSenior) {
 		this.eSenior = eSenior;
+	}
+	public ArrayList<PersonalComission> getpComission() {
+		return pComission;
+	}
+
+	public void setpComission(ArrayList<PersonalComission> pComission) {
+		this.pComission = pComission;
+	}
+	public ArrayList<Personal> getPersonal() {
+		return personal;
+	}
+
+	public void setPersonal(ArrayList<Personal> personal) {
+		this.personal = personal;
 	}
 }
