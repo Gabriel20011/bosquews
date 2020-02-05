@@ -1,5 +1,8 @@
 package co.edu.unbosque.model;
-public class EngenieerJunior extends PersonalSalary {
+
+import java.io.Serializable;
+
+public class EngenieerJunior extends PersonalSalary implements Serializable {
 
 	private int level;
 
