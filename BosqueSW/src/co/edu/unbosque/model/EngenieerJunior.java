@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class EngenieerJunior extends PersonalSalary implements Serializable {
 
 	private int level;
-	
+
 	public EngenieerJunior(String cedula, String nombre, String apellido, char genero, String telefono,
 			double salarioBase, String correo, String direccion, int anio, int level) {
 		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);

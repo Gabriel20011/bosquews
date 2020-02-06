@@ -1,6 +1,6 @@
 package co.edu.unbosque.controller;
+import java.io.File; 
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import co.edu.unbosque.model.Personal;
 
 public class Dto {
-	
+
 	private ArrayList<Personal> per;
 	private File archivo;
-	
+
 	public Dto() {
 		per = new ArrayList<Personal>();
 		archivo = new File("src/co/edu/unbosque/persistence/datos.dat");
@@ -28,7 +28,7 @@ public class Dto {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		leerArchivo();
 	}
 	public void leerArchivo() {
@@ -51,7 +51,7 @@ public class Dto {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 	public void actualizarPersonal(ArrayList<Personal> personal) {
 		FileOutputStream fo;
@@ -59,12 +59,12 @@ public class Dto {
 		try {
 			fo = new FileOutputStream(archivo);
 			ob = new ObjectOutputStream(fo);
-			
+
 			ob.writeObject(personal);
-			
+
 			ob.close();
 			fo.close();
-			
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -72,7 +72,6 @@ public class Dto {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	public ArrayList<Personal> getPer() {
 		return per;
@@ -80,9 +79,4 @@ public class Dto {
 	public void setPer(ArrayList<Personal> per) {
 		this.per = per;
 	}
-	
-	public static void main(String[] args) {
-		Dto d = new Dto();
-	}
-
 }

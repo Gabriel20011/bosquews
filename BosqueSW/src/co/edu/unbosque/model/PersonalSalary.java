@@ -8,15 +8,12 @@ public abstract class PersonalSalary extends Personal implements Serializable{
 		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
 		// TODO Auto-generated constructor stub
 	}
-
 	public int calcularAntiguedad() {
 		Calendar cal= Calendar.getInstance();
 		int antiguedad = cal.get(Calendar.YEAR);
 		antiguedad -= getAnio();
 		return antiguedad;
 	}
-
 	@Override
 	public abstract double calcularSalario();
-
 }
