@@ -1,8 +1,8 @@
 package co.edu.unbosque.model;
+import java.io.Serializable;
 
-public class PersonalComission extends Personal {
-	
-	private double venta;
+public class PersonalComission extends Personal implements Serializable{
+		private double venta;
 	
 	public PersonalComission(String cedula, String nombre, String apellido, char genero, String telefono,
 			double salarioBase, String correo, String direccion, int anio, double venta) {
