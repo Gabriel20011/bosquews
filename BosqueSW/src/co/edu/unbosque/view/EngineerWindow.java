@@ -12,7 +12,7 @@ public class EngineerWindow extends JFrame implements ActionListener{
 	public JButton btnsalario;
 	
 	public EngineerWindow() {
-		setSize(400,500);
+		setSize(225,165);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -20,13 +20,13 @@ public class EngineerWindow extends JFrame implements ActionListener{
 		getContentPane().setLayout(null);
 		
 		btncomision = new JButton("Ingeniero por Comision");
-		btncomision.setBounds(90,50,220,100);
+		btncomision.setBounds(10,05,200,45);
 		getContentPane().add(btncomision);
 		btncomision.addActionListener(this);
 		btncomision.setBackground(Color.lightGray);
 		
 		btnsalario = new JButton("Ingeniero por Salario");
-		btnsalario.setBounds(90,300,220,100);
+		btnsalario.setBounds(10,75,200,45);
 		getContentPane().add(btnsalario);
 		btnsalario.addActionListener(this);
 		btnsalario.setBackground(Color.lightGray);

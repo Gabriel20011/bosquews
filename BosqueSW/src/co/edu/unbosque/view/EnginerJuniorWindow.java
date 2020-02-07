@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -20,138 +21,145 @@ public class EnginerJuniorWindow extends JFrame implements ActionListener {
 	JLabel lbltelefono;
 	JLabel lblcorreo;
 	JLabel lbldireccion;
-	JLabel lblaño;
+	JLabel lblanio;
 	JLabel lblsalario;
 	JLabel lblclientes;
-	JLabel lblnventas;
 	JLabel lblnivel;
-	
+
 	JTextField txtcedula;
 	JTextField txtnombre;
 	JTextField txtapellidos;
-	JCheckBox chechgenero;
 	JTextField txttelefono;
 	JTextField txtcorreo;
 	JTextField txtdireccion;
 	JTextField txtaño;
 	JTextField txtsalario;
 	JTextField txtclientes;
-	JTextField txtnventas;
-	JTextField txtnivel;
-	
+
+
 	JButton agregar;
-	
+
+	JComboBox<String> comboGenero;
+	JComboBox<Integer> comboNivel;
+
 	public EnginerJuniorWindow() {
-		 
-		setTitle("");
-		setSize(600,1200);
+
+		setTitle("Engineer");
+		setSize(600,500);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		getContentPane().setBackground(Color.LIGHT_GRAY);
-		getContentPane().setLayout(new GridLayout(13,2));
-		
-		
-		lblcedula = new JLabel("Cedula");
-		lblcedula.setBounds(100,100,50,50);
-		getContentPane().add(lblcedula);
-		
-		txtcedula = new JTextField();
-		txtcedula.setBounds(200,100,100,50);
-		getContentPane().add(txtcedula);
-		
-		lblnombre = new JLabel("Nombre");
-		lblnombre.setBounds(100,175,50,50);
-		getContentPane().add(lblnombre);
+		getContentPane().setLayout(null);
 
+
+		lblcedula = new JLabel("Cedula");
+		lblcedula.setBounds(45,15,155,25);
+		getContentPane().add(lblcedula);
+
+		txtcedula = new JTextField();
+		txtcedula.setBounds(290,15,285,25);
+		getContentPane().add(txtcedula);
+
+		lblnombre = new JLabel("Nombre");
+		lblnombre.setBounds(45,50,170,25);
+		getContentPane().add(lblnombre);
+		
 		txtnombre = new JTextField();
-		txtnombre.setBounds(200,175,300,50);
+		txtnombre.setBounds(290,50,285,25);
 		getContentPane().add(txtnombre);
-		
+
 		lblapellidos = new JLabel("Apellidos");
-		lblapellidos.setBounds(100,225,70,50);
+		lblapellidos.setBounds(45,90,170,25);
 		getContentPane().add(lblapellidos);
-		
+
 		txtapellidos = new JTextField();
-		txtapellidos.setBounds(200,225,300,50);
+		txtapellidos.setBounds(290,90,285,25);
 		getContentPane().add(txtapellidos);
-		
+
 		lblgenero = new JLabel("Genero");
-		lblgenero.setBounds(100,275,50,50);
+		lblgenero.setBounds(45,130,155,25);
 		getContentPane().add(lblgenero);
-		
-		chechgenero = new JCheckBox();
-		chechgenero.setBounds(200,275,300,50);
-		getContentPane().add(chechgenero);
-		
+		comboGenero = new JComboBox<String>();
+		comboGenero.addItem("Hombre");
+		comboGenero.addItem("Mujer");
+		comboGenero.setBounds(290, 130, 285, 22);
+		getContentPane().add(comboGenero);
+
 		lblcorreo = new JLabel("Telefono");
-		lblcorreo.setBounds(100,375,50,50);
+		lblcorreo.setBounds(45,160,110,20);
 		getContentPane().add(lblcorreo);
-		
+
 		txtcorreo = new JTextField();
-		txtnombre.setBounds(200,375,300,50);
+		txtcorreo.setBounds(290, 160, 285, 20);
 		getContentPane().add(txtcorreo);
-		
+
 		lbldireccion = new JLabel("Direccion");
-		lbldireccion.setBounds(100,425,70,50);
+		lbldireccion.setBounds(45,190,110,20);
 		getContentPane().add(lbldireccion);
-		
+
 		txtdireccion = new JTextField();
-		txtdireccion.setBounds(200,425,300,50);
+		txtdireccion.setBounds(290,192,285,20);
 		getContentPane().add(txtdireccion);
-		
-		lblaño = new JLabel("Año");
-		lblaño.setBounds(100,475,50,50);
-		getContentPane().add(lblaño);
-		
-		txtaño = new JTextField();
-		txtaño.setBounds(200,475,300,50);
-		getContentPane().add(txtaño);
-		
+
+		lblanio = new JLabel("Año");
+		lblanio.setBounds(45,226,110,19);
+		getContentPane().add(lblanio);
+
 		lblsalario = new JLabel("Salario");
-		lblsalario.setBounds(100,525,50,50);
+		lblsalario.setBounds(45,260,110,25);
 		getContentPane().add(lblsalario);
-		
+
 		txtsalario = new JTextField();
-		txtsalario.setBounds(200,525,300,50);
+		txtsalario.setBounds(290,260,285,25);
 		getContentPane().add(txtsalario);
-		
+
 		lblclientes = new JLabel("Numero de clientes");
-		lblclientes.setBounds(100,525,90,50);
+		lblclientes.setBounds(45,300,110,20);
 		getContentPane().add(lblclientes);
-		
+
 		txtclientes = new JTextField();
-		txtclientes.setBounds(200,525,300,50);
+		txtclientes.setBounds(290,300,285,25);
 		getContentPane().add(txtclientes);
-		
-		lblnventas = new JLabel("Numero de ventas");
-		lblnventas.setBounds(100,525,90,50);
-		getContentPane().add(lblnventas);
-		
-		txtnventas = new JTextField();
-		txtnventas.setBounds(200,525,300,50);
-		getContentPane().add(txtnventas);
-		
+
 		lblnivel = new JLabel("Nivel");
-		lblnivel.setBounds(100,525,90,50);
+		lblnivel.setBounds(45,330,110,25);
 		getContentPane().add(lblnivel);
-		
-		txtnivel = new JTextField();
-		txtnivel.setBounds(200,525,300,50);
-		getContentPane().add(txtnivel);
-		
-		
-		
+
 		agregar = new  JButton("AGREGAR");
-		agregar.setBounds(250,1000,100,100);
+		agregar.setBounds(125,400,290,60);
 		getContentPane().add(agregar);
+
+
+
+		JComboBox<Integer> comboAnio = new JComboBox<Integer>();
+		int aux=2020;
+		for (int i = 0; i < 50; i++) 
+		{
+			comboAnio.addItem(aux);
+			aux--;
+		}
+		comboAnio.setBounds(290, 225, 285, 20);
+		getContentPane().add(comboAnio);
+
+
+
+		comboNivel = new JComboBox<Integer>();
+		comboNivel.setBounds(290, 330, 285, 22);
+		comboNivel.addItem(1);
+		comboNivel.addItem(2);
+		comboNivel.addItem(3);
+		comboNivel.addItem(4);
+		comboNivel.addItem(5);
+		getContentPane().add(comboNivel);
 		agregar.addActionListener(this);
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
 	}
 	public static void main(String[] args) {
 		EnginerJuniorWindow v = new EnginerJuniorWindow();
@@ -160,6 +168,6 @@ public class EnginerJuniorWindow extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
