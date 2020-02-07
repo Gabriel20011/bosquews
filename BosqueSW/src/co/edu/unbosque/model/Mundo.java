@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Mundo  {
 	//E stands for employees
 	//P stands for personal
+	j
 	private ArrayList<EngenieerJunior> eJunior;
 	private ArrayList<EngenieerSenior> eSenior;
 	private ArrayList<PersonalComission> pComission;
