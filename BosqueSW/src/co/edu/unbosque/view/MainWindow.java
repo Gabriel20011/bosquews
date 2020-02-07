@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,8 +20,6 @@ public class MainWindow<E> extends JFrame implements ActionListener {
 	public JButton btnvercomision;
 	public JButton btnagregar;
 	public JButton btncalcular;
-	public JList<E>lista;
-	JLabel lblnombre;
 	private DefaultListModel<E> modelo;
 	public JScrollPane scrolllista;
 	
@@ -31,42 +30,48 @@ public class MainWindow<E> extends JFrame implements ActionListener {
 	setResizable(false);
 	setLocationRelativeTo(null);
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
-	getContentPane().setBackground(Color.white);
+	getContentPane().setBackground(new Color(240,235,190));
 	getContentPane().setLayout(null);
-	
-	lblnombre = new JLabel("Logooooo");
-	lblnombre.setBounds(100,100,100,100);
-	getContentPane().add(lblnombre);
 	
 
 	btnveringenieros = new JButton("Ver Ingenieros");
-	btnveringenieros.setBounds(50,260,150,30);
+	btnveringenieros.setForeground(new Color(240,235,190));
+	btnveringenieros.setBackground(new Color(50, 30, 24));
+	btnveringenieros.setBounds(50,212,190,43);
+	btnveringenieros.setFont(new Font("Lucida Calligraphy", Font.TRUETYPE_FONT,14));
 	getContentPane().add(btnveringenieros);
 	btnveringenieros.addActionListener(this);
 
 	btnvercomision = new JButton("Ver Comision");
-	btnvercomision.setBounds(50,340,150,30);
+	btnvercomision.setBounds(50,285,190,43);
+	btnvercomision.setBackground(new Color(50, 30, 24));
+	btnvercomision.setForeground(new Color(240,235,190));
+	btnvercomision.setFont(new Font("Lucida Calligraphy",  Font.ROMAN_BASELINE, 14));
 	getContentPane().add(btnvercomision);
 	btnvercomision.addActionListener(this);
 
 	btnagregar = new JButton("Agregar Ingeniero");
-	btnagregar.setBounds(50,420,150,30);
+	btnagregar.setBounds(50,360,190,43);
+	btnagregar.setBackground(new Color(50, 30, 24));
+	btnagregar.setForeground(new Color(240,235,190));
+	btnagregar.setFont(new Font("Lucida Calligraphy", Font.PLAIN, 14));
 	getContentPane().add(btnagregar);
 	btnagregar.addActionListener(this);
 	
 	btncalcular = new JButton("Calcular Salario");
-	btncalcular.setBounds(50,500,150,30);
+	btncalcular.setBounds(50,427,190,43);
+	btncalcular.setBackground(new Color(50, 30, 24));
+	btncalcular.setForeground(new Color(240,235,190));
+	btncalcular.setFont(new Font("Lucida Calligraphy",  Font.ROMAN_BASELINE, 14));
 	getContentPane().add(btncalcular);
 	btncalcular.addActionListener(this);
-	// TODO Auto-generated constructor stub
-	lista= new JList<E>();
-	lista.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-	getContentPane().add(lista);
-	modelo = new DefaultListModel<E>();
-	scrolllista = new JScrollPane();
-	scrolllista.setBounds(300,100,525,450);
-	scrolllista.setViewportView(lista);
-	getContentPane().add(scrolllista);
+	
+	JList<?> laLista = new JList();
+	laLista.setEnabled(true);
+	laLista.setBounds(330, 80, 405, 390);
+	getContentPane().add(laLista);
+	
+
 	
 	}
 
@@ -82,7 +87,6 @@ public class MainWindow<E> extends JFrame implements ActionListener {
 		MainWindow mw = new MainWindow();
 		mw.setVisible(true);
 	}
-
 }
 
 	
