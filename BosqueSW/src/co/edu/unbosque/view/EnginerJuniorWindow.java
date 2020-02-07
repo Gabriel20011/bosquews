@@ -32,7 +32,7 @@ public class EnginerJuniorWindow extends JFrame implements ActionListener {
 	JTextField txttelefono;
 	JTextField txtcorreo;
 	JTextField txtdireccion;
-	JTextField txtaño;
+	JTextField txtanio;
 	JTextField txtsalario;
 	JTextField txtclientes;
 
@@ -102,7 +102,7 @@ public class EnginerJuniorWindow extends JFrame implements ActionListener {
 		txtdireccion.setBounds(290,192,285,20);
 		getContentPane().add(txtdireccion);
 
-		lblanio = new JLabel("Año");
+		lblanio = new JLabel("Aï¿½o");
 		lblanio.setBounds(45,226,110,19);
 		getContentPane().add(lblanio);
 

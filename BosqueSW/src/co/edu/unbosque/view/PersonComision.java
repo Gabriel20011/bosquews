@@ -19,7 +19,7 @@ public class PersonComision extends JFrame implements ActionListener {
 	JLabel lbltelefono;
 	JLabel lblcorreo;
 	JLabel lbldireccion;
-	JLabel lblaño;
+	JLabel lblanio;
 	JLabel lblsalario;
 	JLabel lblclientes;
 	
@@ -30,7 +30,7 @@ public class PersonComision extends JFrame implements ActionListener {
 	JTextField txttelefono;
 	JTextField txtcorreo;
 	JTextField txtdireccion;
-	JTextField txtaño;
+	JTextField txtanio;
 	JTextField txtsalario;
 	JTextField txtclientes;
 	
@@ -94,13 +94,13 @@ public class PersonComision extends JFrame implements ActionListener {
 		txtdireccion.setBounds(200,425,300,50);
 		getContentPane().add(txtdireccion);
 		
-		lblaño = new JLabel("Año");
-		lblaño.setBounds(100,475,50,50);
-		getContentPane().add(lblaño);
+		lblanio = new JLabel("Aï¿½o");
+		lblanio.setBounds(100,475,50,50);
+		getContentPane().add(lblanio);
 		
-		txtaño = new JTextField();
-		txtaño.setBounds(200,475,300,50);
-		getContentPane().add(txtaño);
+		txtanio = new JTextField();
+		txtanio.setBounds(200,475,300,50);
+		getContentPane().add(txtanio);
 		
 		lblsalario = new JLabel("Salario");
 		lblsalario.setBounds(100,525,50,50);

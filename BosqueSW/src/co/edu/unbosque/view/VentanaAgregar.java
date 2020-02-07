@@ -13,9 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class VentanaAgregar extends JFrame implements ActionListener {
-	//Cédula de Ciudadanía, nombre, apellidos, género, teléfono, correo
-	//electrónico (debe contener como mínimo el caracter “@” para que sea válido), dirección
-	//domiciliaria y año de ingreso.//
+	//Cï¿½dula de Ciudadanï¿½a, nombre, apellidos, gï¿½nero, telï¿½fono, correo
+	//electrï¿½nico (debe contener como mï¿½nimo el caracter ï¿½@ï¿½ para que sea vï¿½lido), direcciï¿½n
+	//domiciliaria y aï¿½o de ingreso.//
 	JLabel lblcedula;
 	JLabel lblnombre;
 	JLabel lblapellidos;
@@ -23,7 +23,7 @@ public class VentanaAgregar extends JFrame implements ActionListener {
 	JLabel lbltelefono;
 	JLabel lblcorreo;
 	JLabel lbldireccion;
-	JLabel lblaño;
+	JLabel lblanio;
 	JLabel lblsalario;
 	JTextField txtcedula;
 	JTextField txtnombre;
@@ -32,7 +32,7 @@ public class VentanaAgregar extends JFrame implements ActionListener {
 	JTextField txttelefono;
 	JTextField txtcorreo;
 	JTextField txtdireccion;
-	JTextField txtaño;
+	JTextField txtanio;
 	JTextField txtsalario;
 	
 	JButton agregar;
@@ -95,13 +95,13 @@ public class VentanaAgregar extends JFrame implements ActionListener {
 		txtdireccion.setBounds(200,425,300,50);
 		getContentPane().add(txtdireccion);
 		
-		lblaño = new JLabel("Año");
-		lblaño.setBounds(100,475,50,50);
-		getContentPane().add(lblaño);
+		lblanio = new JLabel("Aï¿½o");
+		lblanio.setBounds(100,475,50,50);
+		getContentPane().add(lblanio);
 		
-		txtaño = new JTextField();
-		txtaño.setBounds(200,475,300,50);
-		getContentPane().add(txtaño);
+		txtanio = new JTextField();
+		txtanio.setBounds(200,475,300,50);
+		getContentPane().add(txtanio);
 		
 		lblsalario = new JLabel("Salario");
 		lblsalario.setBounds(100,525,50,50);

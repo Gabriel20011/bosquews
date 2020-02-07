@@ -21,7 +21,7 @@ public class EngineerSeniorWimdow extends JFrame implements ActionListener {
 	JLabel lbltelefono;
 	JLabel lblcorreo;
 	JLabel lbldireccion;
-	JLabel lblaño;
+	JLabel lblanio;
 	JLabel lblsalario;
 	JLabel lblclientes;
 	JLabel lblnventas;
@@ -93,9 +93,9 @@ public class EngineerSeniorWimdow extends JFrame implements ActionListener {
 		txtdireccion.setBounds(290,192,285,20);
 		getContentPane().add(txtdireccion);
 		
-		lblaño = new JLabel("Año");
-		lblaño.setBounds(45,226,110,19);
-		getContentPane().add(lblaño);
+		lblanio = new JLabel("Anio");
+		lblanio.setBounds(45,226,110,19);
+		getContentPane().add(lblanio);
 		
 		lblsalario = new JLabel("Salario");
 		lblsalario.setBounds(45,260,110,25);
