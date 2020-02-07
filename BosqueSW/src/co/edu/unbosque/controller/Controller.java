@@ -1,13 +1,18 @@
 package co.edu.unbosque.controller;
 import java.util.ArrayList;
 import co.edu.unbosque.model.*;
+import co.edu.unbosque.view.MainWindow;
 
 public class Controller {
 	
 	private Mundo m;
+	private MainWindow ventana;
 
 	public Controller() {
 		m = new Mundo();
+		ventana = new MainWindow(this);
+		ventana.setVisible(true);
+		
 	}
 
 	public void agregarSenior(String cedula, String nombre, String apellido, char genero, String telefono,

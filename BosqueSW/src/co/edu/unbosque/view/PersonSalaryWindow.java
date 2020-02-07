@@ -17,7 +17,7 @@ public class PersonSalaryWindow extends JFrame implements ActionListener {
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-		getContentPane().setBackground(Color.WHITE);
+		getContentPane().setBackground(new Color(240,235,190));
 		getContentPane().setLayout(null);
 		
 		btncomision = new JButton("Ingeniero Senior");
@@ -38,10 +38,6 @@ public class PersonSalaryWindow extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
-	}
-	public static void main(String[] args) {
-		EngineerWindow e = new EngineerWindow();
-		e.setVisible(true);
 	}
 
 }
