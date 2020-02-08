@@ -16,6 +16,7 @@ public class ListaPersonal extends JFrame {
 	private JScrollPane scrollCedula;
 	private ArrayList<String> cedulas;
 	private MainWindow principal;
+	private String tipoPersonal;
 
 	public ListaPersonal(MainWindow principal) {
 		this.principal = principal;
@@ -30,6 +31,7 @@ public class ListaPersonal extends JFrame {
 	}
 
 	public void iniciarBotones(String tipoPersonal) {
+		this.tipoPersonal = tipoPersonal;
 		setTitle("Lista de Ingenieros " + tipoPersonal);
 		cedulas = new ArrayList<String>();
 
@@ -76,17 +78,14 @@ public class ListaPersonal extends JFrame {
 
 		if (tipoPersonal.equals("Senior")) {
 			btnAgregar.setActionCommand("AgregarSenior");
-			btnModificar.setActionCommand("ModificarSenior");
 			btnEliminar.setActionCommand("EliminarSenior");
 		}
 		if (tipoPersonal.equals("Junior")) {
 			btnAgregar.setActionCommand("AgregarJunior");
-			btnModificar.setActionCommand("ModificarJunior");
 			btnEliminar.setActionCommand("EliminarJunior");
 		}
 		if (tipoPersonal.equals("Comission")) {
 			btnAgregar.setActionCommand("AgregarComission");
-			btnModificar.setActionCommand("ModificarComission");
 			btnEliminar.setActionCommand("EliminarComission");
 		}
 		btnModificar.setActionCommand("Modificar");
@@ -126,9 +125,13 @@ public class ListaPersonal extends JFrame {
 			}
 		}
 	}
-
 	public JList<String> getListaCedula() {
 		return listaCedula;
 	}
+
+	public String getTipoPersonal() {
+		return tipoPersonal;
+	}
+	
 
 }

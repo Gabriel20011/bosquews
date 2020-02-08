@@ -53,44 +53,39 @@ public class Controller {
 			return false;
 		}
 	}
-	public void modificar(String cedula, String nombre, String apellido, String telefono, String correo, String direccion) {
-		Personal per = buscar(cedula);
-		if(per!=null && per instanceof PersonalComission) {
+	public boolean modificar(String cedula, String nombre, String apellido, String telefono, String correo, String direccion, String anio) {
+		boolean retorno = false;
+		Personal per = buscar(cedula); 
+		if (per != null) {
+			retorno = true;
 			per.setNombre(nombre);
 			per.setApellido(apellido);
 			per.setTelefono(telefono);
 			per.setDireccion(direccion);
-			per.setCorreo(correo);			
+			per.setCorreo(correo);		
+			per.setAnio(Integer.parseInt(anio));
 		}
-		if(per!=null && per instanceof EngenieerJunior) {
-			per.setNombre(nombre);
-			per.setApellido(apellido);
-			per.setTelefono(telefono);
-			per.setDireccion(direccion);
-			per.setCorreo(correo);			
-		}
-		if(per!=null && per instanceof EngenieerSenior) {
-			per.setNombre(nombre);
-			per.setApellido(apellido);
-			per.setTelefono(telefono);
-			per.setDireccion(direccion);
-			per.setCorreo(correo);			
-		}
+		
+		return retorno;
 	}
 
-	public void eliminar(String cedula) {
+	public boolean eliminar(String cedula) {
 		Personal per = buscar(cedula);
+		boolean a = false;
 		if(per!=null && per instanceof PersonalComission) {
 			m.getpComission().remove(per);
+			a = true;
 		}	
 		if(per!=null && per instanceof EngenieerSenior) {
 			m.geteSenior().remove(per);
+			a = true;
 		}
 		if(per!=null && per instanceof EngenieerJunior) {
 			m.geteJunior().remove(per);
+			a = true;
 		}
+		return a;
 	}
-
 	public Personal buscar(String cedula ) {
 		Personal per = null;
 		for (int i = 0; i < m.geteJunior().size(); i++) {
@@ -133,6 +128,15 @@ public class Controller {
 		for (int i = 0; i < m.geteSenior().size(); i++) {
 			m.getPersonal().add(m.geteSenior().get(i));
 		}
+	}
+	public boolean verificarCorreo(String correo) {
+		char[] a = correo.toCharArray();
+		for (int i = 0; i < a.length; i++) {
+			if(a[i]=='@') {
+				return true;
+			}
+		}
+		return false;
 	}
 	public Mundo getM() {
 		return m;

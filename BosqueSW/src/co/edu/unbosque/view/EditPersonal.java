@@ -41,10 +41,8 @@ public class EditPersonal extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
-		addWindowListener(principal);
-	}
-		public void iniciarFormulario(String tipoPersonal) {
-			setTitle("Editar " +tipoPersonal);
+		addWindowListener(principal);	
+
 		lblcedula = new JLabel("Cedula");
 		lblcedula.setBounds(45,15,155,25);
 		add(lblcedula);
@@ -56,7 +54,7 @@ public class EditPersonal extends JFrame {
 		lblnombre = new JLabel("Nombre");
 		lblnombre.setBounds(45,50,170,25);
 		add(lblnombre);
-		
+
 		txtnombre = new JTextField();
 		txtnombre.setBounds(290, 50, 285, 25);
 		add(txtnombre);
@@ -101,9 +99,9 @@ public class EditPersonal extends JFrame {
 
 		editar = new  JButton("CONFIRMAR");
 		editar.setBounds(25,400,200,60);
-		editar.setActionCommand("editar Senior");
+		editar.setActionCommand("editar");
 		add(editar);
-		
+
 		menu = new JButton("Menu");
 		menu.addActionListener(principal);
 		menu.setBounds(355, 400, 200, 60);
@@ -112,7 +110,7 @@ public class EditPersonal extends JFrame {
 		lbltelefono = new JLabel("Telefono");
 		lbltelefono.setBounds(45, 278, 285, 20);
 		add(lbltelefono);
-		
+
 		txttelefono = new JTextField();
 		txttelefono.setBounds(290, 278, 285, 20);
 		add(txttelefono);
@@ -125,6 +123,9 @@ public class EditPersonal extends JFrame {
 		comboAnio.setBounds(290, 225, 285, 20);
 		add(comboAnio);
 		editar.addActionListener(principal);
+	}
+	public void iniciarFormulario(String tipoPersonal) {
+		setTitle("Editar " +tipoPersonal);
 		if(tipoPersonal.contentEquals("Comission")) {
 			lblventa = new JLabel("Numero de ventas");
 			lblventa.setBounds(45,330,150,25);
@@ -152,71 +153,72 @@ public class EditPersonal extends JFrame {
 			comboNivel.addItem(5);
 			add(comboNivel);
 		}
+
 	}
-		public JTextField getTxtventa() {
-			return txtventa;
-		}
-		public void setTxtventa(JTextField txtventa) {
-			this.txtventa = txtventa;
-		}
-		public JTextField getTxtnombre() {
-			return txtnombre;
-		}
-		public void setTxtnombre(JTextField txtnombre) {
-			this.txtnombre = txtnombre;
-		}
-		public JTextField getTxtcedula() {
-			return txtcedula;
-		}
-		public void setTxtcedula(JTextField txtcedula) {
-			this.txtcedula = txtcedula;
-		}
-		public JTextField getTxtapellido() {
-			return txtapellido;
-		}
-		public void setTxtapellido(JTextField txtapellido) {
-			this.txtapellido = txtapellido;
-		}
-		public JTextField getTxtcorreo() {
-			return txtcorreo;
-		}
-		public void setTxtcorreo(JTextField txtcorreo) {
-			this.txtcorreo = txtcorreo;
-		}
-		public JTextField getTxttelefono() {
-			return txttelefono;
-		}
-		public void setTxttelefono(JTextField txttelefono) {
-			this.txttelefono = txttelefono;
-		}
-		public JTextField getTxtdireccion() {
-			return txtdireccion;
-		}
-		public void setTxtdireccion(JTextField txtdireccion) {
-			this.txtdireccion = txtdireccion;
-		}
-		public JTextField getTxtnventas() {
-			return txtnventas;
-		}
-		public void setTxtnventas(JTextField txtnventas) {
-			this.txtnventas = txtnventas;
-		}
-		public JComboBox<Integer> getComboNivel() {
-			return comboNivel;
-		}
-		public void setComboNivel(JComboBox<Integer> comboNivel) {
-			this.comboNivel = comboNivel;
-		}
-		public JComboBox<Character> getComboGenero() {
-			return comboGenero;
-		}
-		public void setComboGenero(JComboBox<Character> comboGenero) {
-			this.comboGenero = comboGenero;
-		}
-		public JComboBox<Integer> getComboAnio() {
-			return comboAnio;
-		}
-		public void setComboAnio(JComboBox<Integer> comboAnio) {
-			this.comboAnio = comboAnio;
-		}
+	public JTextField getTxtventa() {
+		return txtventa;
+	}
+	public void setTxtventa(JTextField txtventa) {
+		this.txtventa = txtventa;
+	}
+	public JTextField getTxtnombre() {
+		return txtnombre;
+	}
+	public void setTxtnombre(JTextField txtnombre) {
+		this.txtnombre = txtnombre;
+	}
+	public JTextField getTxtcedula() {
+		return txtcedula;
+	}
+	public void setTxtcedula(JTextField txtcedula) {
+		this.txtcedula = txtcedula;
+	}
+	public JTextField getTxtapellido() {
+		return txtapellido;
+	}
+	public void setTxtapellido(JTextField txtapellido) {
+		this.txtapellido = txtapellido;
+	}
+	public JTextField getTxtcorreo() {
+		return txtcorreo;
+	}
+	public void setTxtcorreo(JTextField txtcorreo) {
+		this.txtcorreo = txtcorreo;
+	}
+	public JTextField getTxttelefono() {
+		return txttelefono;
+	}
+	public void setTxttelefono(JTextField txttelefono) {
+		this.txttelefono = txttelefono;
+	}
+	public JTextField getTxtdireccion() {
+		return txtdireccion;
+	}
+	public void setTxtdireccion(JTextField txtdireccion) {
+		this.txtdireccion = txtdireccion;
+	}
+	public JTextField getTxtnventas() {
+		return txtnventas;
+	}
+	public void setTxtnventas(JTextField txtnventas) {
+		this.txtnventas = txtnventas;
+	}
+	public JComboBox<Integer> getComboNivel() {
+		return comboNivel;
+	}
+	public void setComboNivel(JComboBox<Integer> comboNivel) {
+		this.comboNivel = comboNivel;
+	}
+	public JComboBox<Character> getComboGenero() {
+		return comboGenero;
+	}
+	public void setComboGenero(JComboBox<Character> comboGenero) {
+		this.comboGenero = comboGenero;
+	}
+	public JComboBox<Integer> getComboAnio() {
+		return comboAnio;
+	}
+	public void setComboAnio(JComboBox<Integer> comboAnio) {
+		this.comboAnio = comboAnio;
+	}
 }
