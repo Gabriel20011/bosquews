@@ -245,4 +245,16 @@ public abstract class Personal implements Serializable {
 	public int getAnio() {
 		return anio;
 	}
+	/**
+	 * Este metodo recoge un nuevo anio en caso de necesitar modificar este dato especifico
+	 * 
+	 * <b>pre<b/> un personal debe haber sido creado
+	 * <b>post<b/> se modificara la dureccion (atributo) de cierto personal
+	 * 
+	 * @param cedula EL anio de ingreso con la que se identificara al personal
+	 */
+	public void setAnio(int anio) {
+		this.anio = anio;
+	}
+	
 }

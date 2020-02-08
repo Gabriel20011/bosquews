@@ -53,29 +53,20 @@ public class Controller {
 			return false;
 		}
 	}
-	public void modificar(String cedula, String nombre, String apellido, String telefono, String correo, String direccion) {
-		Personal per = buscar(cedula);
-		if(per!=null && per instanceof PersonalComission) {
+	public boolean modificar(String cedula, String nombre, String apellido, String telefono, String correo, String direccion, String anio) {
+		boolean retorno = false;
+		Personal per = buscar(cedula); 
+		if (per != null) {
+			retorno = true;
 			per.setNombre(nombre);
 			per.setApellido(apellido);
 			per.setTelefono(telefono);
 			per.setDireccion(direccion);
-			per.setCorreo(correo);			
+			per.setCorreo(correo);		
+			per.setAnio(Integer.parseInt(anio));
 		}
-		if(per!=null && per instanceof EngenieerJunior) {
-			per.setNombre(nombre);
-			per.setApellido(apellido);
-			per.setTelefono(telefono);
-			per.setDireccion(direccion);
-			per.setCorreo(correo);			
-		}
-		if(per!=null && per instanceof EngenieerSenior) {
-			per.setNombre(nombre);
-			per.setApellido(apellido);
-			per.setTelefono(telefono);
-			per.setDireccion(direccion);
-			per.setCorreo(correo);			
-		}
+		
+		return retorno;
 	}
 
 	public boolean eliminar(String cedula) {
