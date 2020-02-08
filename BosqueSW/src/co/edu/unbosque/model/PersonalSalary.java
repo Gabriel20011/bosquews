@@ -21,8 +21,8 @@ public abstract class PersonalSalary extends Personal implements Serializable{
 	 * El constructor de este metodo se usara para que las clases hijas de esta recogan las caracteristicas de personalSalary
 	 * 
 	 * 
-	 * <b>pre<b/> se requerira que esta clase herede de la clase personal
-	 * <b>post<b/> se habra pasado los datos basicos de 
+	 * <b>pre</b> se requerira que esta clase herede de la clase personal
+	 * <b>post</b> se habra pasado los datos basicos de 
 	 *
 	 * @param cedula referencia a la cedula personal del empleado
 	 * @param nombre referencia al nombre del empleado
@@ -43,8 +43,8 @@ public abstract class PersonalSalary extends Personal implements Serializable{
 	/**
 	 * Este metodo cacula la antiguedad de un empleado con salario definido y retorna este valor
 	 * 
-	 * <b>pre<b/> Se requiere que el valor de antiguedad tenga un valor por ende...
-	 * <b>pre<b/> Una instancia de las calses que heredan de personal con salario tiene que estar instanciado
+	 * <b>pre</b> Se requiere que el valor de antiguedad tenga un valor por ende...
+	 * <b>pre</b> Una instancia de las calses que heredan de personal con salario tiene que estar instanciado
 	 * 
 	 * 
 	 * @return el tiempo que un personal con slario ha estado en la empresa

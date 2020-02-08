@@ -2,8 +2,8 @@ package co.edu.unbosque.model;
 
 import java.io.Serializable;
 /*
- * Es la clase encargada de crear un ingeniero junior el cual tiene las mismas caracteristicas de una persona a comision
- * y ademas de tener una caracteristica adicional del nivel de este
+ * Es la clase encargada de crear un ingeniero junior el cual tiene las mismas caracteristicas de una persona de 
+ * sueldo fijo y ademas de tener una caracteristica adicional del nivel de este
  * @author	Juan David Quintero
  * @author  Sergio Ortiz
  * @author  Gabriel Alejandro Ortega
@@ -32,13 +32,13 @@ public class EngenieerJunior extends PersonalSalary implements Serializable {
 			double salarioBase, String correo, String direccion, int anio, int level) {
 		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
 		this.level = level;
-		// TODO Auto-generated constructor stub
+		calcularSalario();
 	}
 	
 	/**
 	 * El metodo permite calcular el salario de los EngenieerJunior tomando un salario base 
 	 * <b>pre</b>  Se tiene que crear un EngenieerJunior 
-	 * <b>post</b> Se define el Salario del EngenieerJunior
+	 * <b>post</b> Se define el Salario del EngenieerJunior en base a su nivel
 	 * @return getSalarioBase
 	 */
 	@Override

@@ -1,6 +1,13 @@
 package co.edu.unbosque.model;
 import java.util.ArrayList;
-
+/*
+ * Esta clase es al que se encarga de inicializar las respectivas arraylist en las que se guardaran los
+ * diferentes empleados segun su tipo 
+ * @author	Juan David Quintero
+ * @author  Sergio Ortiz
+ * @author  Gabriel Alejandro Ortega
+ * @author  Juan Diego Fajardo
+ */
 public class Mundo  {
 	//E stands for employees
 	//P stands for personal
@@ -8,6 +15,11 @@ public class Mundo  {
 	private ArrayList<EngenieerSenior> eSenior;
 	private ArrayList<PersonalComission> pComission;
 	private ArrayList<Personal> personal;
+
+	/*
+	 * Es el contructor de la clase mundo y inicializa las respectivas arraylists de la misma
+	 * 
+	 */
 	public Mundo() {
 		
 		eJunior = new ArrayList<EngenieerJunior>();

@@ -7,8 +7,8 @@ public class PersonalComission extends Personal implements Serializable{
 	 * Esta clase representa a los tipos de pesonal que trabajan unicamente por comision 
 	 * Debido a que siguen siendo personales entonces heredaran estas caracteristicas de la clase Personal
 	 * 
-	 * <b>pre<b/> Sera nesesario que se herede a la clase personal
-	 * <b>post<b/> Una insancia de PersonalComission sera creado
+	 * <b>pre</b> Sera nesesario que se herede a la clase personal
+	 * <b>post</b>Una insancia de PersonalComission sera creado
 	 * 
 	 */
 	private double venta;
@@ -17,8 +17,8 @@ public class PersonalComission extends Personal implements Serializable{
 	 * El contructor de esta clase instanciara un objeto pasandole los atributos basicos heredados de una personal
 	 * mas las ventas que tenga
 	 * 
-	 *<b>pre<b/> se requerira que esta clase herede de la clase personal
-	 *<b>post<b/> se instanciara un PersonalCommision 
+	 *<b>pre</b> se requerira que esta clase herede de la clase personal
+	 *<b>post</b> se instanciara un PersonalCommision 
 	 *
 	 *
 	* @param cedula referencia a la cedula personal del empleado
@@ -43,8 +43,8 @@ public class PersonalComission extends Personal implements Serializable{
 	/**
 	 * Este metodo calcula el salario correspondiente de el pesonal por comision teniendo en cuenta las ventas a cargo
 	 * 
-	 * <b>pre<b/> debe haber sido inicializado correctamente el salario base de el personal por comision
-	 * <b>post<b/> el salario base habra sido actualizado asi como se habra retornado este valor
+	 * <b>pre</b> debe haber sido inicializado correctamente el salario base de el personal por comision
+	 * <b>post</b>el salario base habra sido actualizado asi como se habra retornado este valor
 	 * 
 	 * @return double el salario actualizado del personal por comision
 	 */
@@ -58,8 +58,8 @@ public class PersonalComission extends Personal implements Serializable{
 	/**
 	 * Este metodo retorna las ventas que posee la instancia de el persional por comission
 	 * 
-	 * <b>pre<b/> debe haber un valor inicial de ventas y por eso...
-	 * <b>pre<b/> debe haber sido instanciado
+	 * <b>pre</b> debe haber un valor inicial de ventas y por eso...
+	 * <b>pre</b>debe haber sido instanciado
 	 * @return las ventas que tiene a cargo un personal por comision
 	 */
 	public double getVenta() {
@@ -68,9 +68,9 @@ public class PersonalComission extends Personal implements Serializable{
 	/**
 	 * Este metodo permite modificar el valor de ventas de un personal por comision
 	 * 
-	 * <b>pre<b/> debe haber un valor inicial de ventas y por eso...
-	 * <b>pre<b/> debe haber sido instanciado
-	 * <b>post<b/> El atributo de venta sera modificado
+	 * <b>pre</b> debe haber un valor inicial de ventas y por eso...
+	 * <b>pre</b>debe haber sido instanciado
+	 * <b>post</b> El atributo de venta sera modificado
 	 * 
 	 * @param venta el nuevo valor de ventas 
 	 */
