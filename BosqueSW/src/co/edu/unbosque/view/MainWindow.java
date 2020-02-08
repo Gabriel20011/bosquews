@@ -7,8 +7,10 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import co.edu.unbosque.controller.Controller;
 import co.edu.unbosque.model.Personal;
@@ -31,6 +33,7 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 	private ListaPersonal listaPersonal;
 	private ShowPersonal informationPersonal;
 	private EditPersonal ePersonal;
+	private JLabel Logo;
 
 	/**
 	 * Metodo constructor donde se inicializa las caracteristicas de la vista
@@ -45,8 +48,12 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setBackground(new Color(240,235,190));
+		getContentPane().setBackground(Color.white);
 		setLayout(null);
+		
+		Logo = new JLabel(new ImageIcon("src/co/edu/unbosque/Fondo.png"));
+		Logo.setBounds(100, 0 , 200, 200);
+		add(Logo);
 
 		btnveringenieros = new JButton("Ver Ingenieros");
 		btnveringenieros.setForeground(new Color(240,235,190));
@@ -56,6 +63,8 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 		add(btnveringenieros);
 		btnveringenieros.addActionListener(this);
 		addWindowListener(this);
+		
+		
 	}
 	/**
 	 * Metodo para inicializar los paneles
@@ -109,6 +118,7 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 			setVisible(true);
 
 			if (informationPersonal != null) {
+				informationPersonal.cargarInformacion(null);
 				informationPersonal.getTxtapellido().setText("");
 				informationPersonal.getTxtnombre().setText("");
 				informationPersonal.getTxtcedula().setText("");
