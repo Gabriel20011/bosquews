@@ -117,30 +117,21 @@ public class Controller {
 	 * @param correo es el nuevo correo que se le va a generar al empleado
 	 * @param direccion es la nueva direccion que se le va a definir a el empleado
 	 */
-	public void modificar(String cedula, String nombre, String apellido, String telefono, String correo, String direccion) {
-		Personal per = buscar(cedula);
-		if(per!=null && per instanceof PersonalComission) {
-			per.setNombre(nombre);
-			per.setApellido(apellido);
-			per.setTelefono(telefono);
-			per.setDireccion(direccion);
-			per.setCorreo(correo);			
-		}
-		if(per!=null && per instanceof EngenieerJunior) {
-			per.setNombre(nombre);
-			per.setApellido(apellido);
-			per.setTelefono(telefono);
-			per.setDireccion(direccion);
-			per.setCorreo(correo);			
-		}
-		if(per!=null && per instanceof EngenieerSenior) {
-			per.setNombre(nombre);
-			per.setApellido(apellido);
-			per.setTelefono(telefono);
-			per.setDireccion(direccion);
-			per.setCorreo(correo);			
-		}
-	}
+	public boolean modificar(String cedula, String nombre, String apellido, String telefono, String correo, String direccion, String anio) {
+        boolean retorno = false;
+        Personal per = buscar(cedula); 
+        if (per != null) {
+            retorno = true;
+            per.setNombre(nombre);
+            per.setApellido(apellido);
+            per.setTelefono(telefono);
+            per.setDireccion(direccion);
+            per.setCorreo(correo);
+            per.setAnio(Integer.parseInt(anio));
+        }
+
+        return retorno;
+    }
 	/**
 	 * Es el metodo que permite buscar un mepleado por su cedula y mediante eso eliminarlo
 	 * <b>pre</b> Requiere que existan las arraylists de los empleados y que exista la cedula que se busca
