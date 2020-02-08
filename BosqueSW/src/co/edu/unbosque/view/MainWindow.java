@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
 import co.edu.unbosque.controller.Controller;
 
 public class MainWindow extends JFrame implements ActionListener {
@@ -103,6 +102,7 @@ public class MainWindow extends JFrame implements ActionListener {
 						anio, Integer.parseInt(aEngineerSenior.getTxtnventas().getText()));
 
 				controlador.converger();
+				
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "POR FAVOR INGRESE BIEN LOS DATOS");
@@ -129,9 +129,20 @@ public class MainWindow extends JFrame implements ActionListener {
 		if(accion == "agregar Comission") {
 			if(aPersonalComission.getTxtnombre().getText().length()!=0 && aPersonalComission.getTxtapellido().getText().length()!=0 
 					&& aPersonalComission.getTxtcedula().getText().length()!=0 && aPersonalComission.getTxtcorreo().getText().length()!=0
-					&& aPersonalComission.getTxtdireccion().getText().length()!=0 && aPersonalComission.getTxtcedula().getText().matches("[0-9]+") 
-					&& aPersonalComission.getTxtapellido().getText().contains("[a-zA-Z]+") && aPersonalComission.getTxtnombre().getText().contains("[a-zA-Z]+")
-					&& aPersonalComission.getTxtventa().getText().length()!=0) {
+					&& aPersonalComission.getTxtdireccion().getText().length()!=0 && 
+					 aPersonalComission.getTxtventa().getText().length()!=0) {
+				int anio = (int) aPersonalComission.getComboAnio().getSelectedItem();
+				char genero = (char) aPersonalComission.getComboGenero().getSelectedIndex();
+				controlador.agregarComission(aPersonalComission.getTxtcedula().getText(), aPersonalComission.getTxtnombre().getText(), aPersonalComission.getTxtapellido().getText(),
+						genero, aPersonalComission.getTxttelefono().getText(), 0, aPersonalComission.getTxtcorreo().getText(), aPersonalComission.getTxtdireccion().getText(),
+						anio, Double.parseDouble(aPersonalComission.getTxtventa().getText()));
+				aPersonalComission.getTxtapellido().setText("");
+				aPersonalComission.getTxtnombre().setText("");
+				aPersonalComission.getTxtcedula().setText("");
+				aPersonalComission.getTxtdireccion().setText("");
+				aPersonalComission.getTxtcorreo().setText("");
+				aPersonalComission.getTxttelefono().setText("");
+				aPersonalComission.getTxtventa().setText("");
 			}else {
 				JOptionPane.showMessageDialog(null, "POR FAVOR INGRESE BIEN LOS DATOS");
 			}
@@ -152,6 +163,4 @@ public class MainWindow extends JFrame implements ActionListener {
 	public Controller getControlador() {
 		return controlador;
 	}
-	
-	
 }
