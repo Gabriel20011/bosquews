@@ -19,8 +19,6 @@ public class ShowPersonal extends JFrame {
 	private JLabel lbldireccion;
 	private JLabel lblanio;
 	private JLabel lblSalario;
-
-
 	private JLabel txtnombre;
 	private JLabel txtgenero;
 	private JLabel txtcedula;
@@ -30,7 +28,6 @@ public class ShowPersonal extends JFrame {
 	private JLabel txtdireccion;
 	private JLabel txtanio;
 	private JLabel txtSalario;
-
 	private JButton menu;
 
 	private MainWindow principal;
@@ -134,6 +131,14 @@ public class ShowPersonal extends JFrame {
 		menu.setBounds(355, 400, 200, 60);
 		add(menu);
 
+		lblanio = new JLabel("Anio");
+		lblanio.setBounds(45,226,110,19);
+		add(lblanio);
+		
+		txtanio = new JLabel(Integer.toString(personal.getAnio()));
+		txtanio.setBounds(290,226,110,19);
+		add(txtanio);
+	
 	}
 
 	public JLabel getTxtnombre() {
@@ -171,6 +176,5 @@ public class ShowPersonal extends JFrame {
 	public JLabel getTxtSalario() {
 		return txtSalario;
 	}
-	
 
 }

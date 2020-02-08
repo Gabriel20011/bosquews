@@ -132,6 +132,5 @@ public class ListaPersonal extends JFrame {
 	public String getTipoPersonal() {
 		return tipoPersonal;
 	}
-	
 
 }

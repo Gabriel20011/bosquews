@@ -12,12 +12,9 @@ public class EngineerWindow extends JFrame{
 	private JButton btncomision;
 	private JButton btnsalario;
 	private JButton menu;
-	private MainWindow principal;
 	
 	public EngineerWindow(MainWindow principal) {
-		
-		this.principal = principal;
-		setSize(225, 235);
+				setSize(225, 235);
 		setResizable(false);
 		setVisible(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

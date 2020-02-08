@@ -11,10 +11,8 @@ public class SalaryWindow extends JFrame{
 	private JButton btnveringenieroS;
 	private JButton btnveringenieroJ;
 	private JButton menu;
-	private MainWindow principal;
 	
 	public SalaryWindow(MainWindow principal) {
-		this.principal = principal;
 		setSize(225, 235);
 		setResizable(false);
 		setVisible(false);

@@ -136,55 +136,28 @@ public class AddEnginerJunior extends JFrame  {
 	public JTextField getTxtcedula() {
 		return txtcedula;
 	}
-	public void setTxtcedula(JTextField txtcedula) {
-		this.txtcedula = txtcedula;
-	}
 	public JTextField getTxtnombre() {
 		return txtnombre;
-	}
-	public void setTxtnombre(JTextField txtnombre) {
-		this.txtnombre = txtnombre;
 	}
 	public JTextField getTxtapellido() {
 		return txtapellido;
 	}
-	public void setTxtapellido(JTextField txtapellido) {
-		this.txtapellido = txtapellido;
-	}
 	public JTextField getTxtcorreo() {
 		return txtcorreo;
-	}
-	public void setTxtcorreo(JTextField txtcorreo) {
-		this.txtcorreo = txtcorreo;
 	}
 	public JTextField getTxtdireccion() {
 		return txtdireccion;
 	}
-	public void setTxtdireccion(JTextField txtdireccion) {
-		this.txtdireccion = txtdireccion;
-	}
 	public JComboBox<Integer> getComboAnio() {
 		return comboAnio;
-	}
-	public void setComboAnio(JComboBox<Integer> comboAnio) {
-		this.comboAnio = comboAnio;
 	}
 	public JComboBox<Character> getComboGenero() {
 		return comboGenero;
 	}
-	public void setComboGenero(JComboBox<Character> comboGenero) {
-		this.comboGenero = comboGenero;
-	}
 	public JComboBox<Integer> getComboNivel() {
 		return comboNivel;
 	}
-	public void setComboNivel(JComboBox<Integer> comboNivel) {
-		this.comboNivel = comboNivel;
-	}
 	public JTextField getTxttelefono() {
 		return txttelefono;
-	}
-	public void setTxttelefono(JTextField txttelefono) {
-		this.txttelefono = txttelefono;
 	}
 }

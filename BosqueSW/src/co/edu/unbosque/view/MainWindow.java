@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import co.edu.unbosque.controller.Controller;
 import co.edu.unbosque.model.Personal;
 
+
 public class MainWindow extends JFrame implements ActionListener, WindowListener {
 
 	private JButton btnveringenieros;
@@ -53,10 +54,11 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 		aEngineerSenior = new AddEngineerSenior(this);
 		aEnginnerJunior = new AddEnginerJunior(this);
 		aPersonalComission = new AddPersonalComission(this);
-		ePersonal = new EditPersonal(this);
 		listaPersonal = new ListaPersonal(this);
 		informationPersonal = new ShowPersonal(this);
 		ePersonal = new EditPersonal(this);
+		listaPersonal = new ListaPersonal(this);
+		informationPersonal = new ShowPersonal(this);
 	}
 
 	public void ocultarPaneles() {
@@ -117,7 +119,7 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 					&& aEngineerSenior.getTxtdireccion().getText().length()!=0 && aEngineerSenior.getTxtnventas().getText().length()!=0
 					&& aEngineerSenior.getTxtcedula().getText().matches("[0-9]+") && aEngineerSenior.getTxtapellido().getText().matches("[a-zA-Z]+")
 					&& aEngineerSenior.getTxtnombre().getText().matches("[a-zA-Z]+") && aEngineerSenior.getTxtnventas().getText().matches("[0-9]+")
-					&& aEngineerSenior.getTxttelefono().getText().matches("[0-9]+")) {
+					&& aEngineerSenior.getTxttelefono().getText().matches("[0-9]+") && controlador.verificarCorreo(aEngineerSenior.getTxtcorreo().getText())) {
 
 				int anio = (int) aEngineerSenior.getComboAnio().getSelectedItem();
 				char genero = (char) aEngineerSenior.getComboGenero().getSelectedItem();
@@ -143,7 +145,7 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 					&& aEnginnerJunior.getTxtcedula().getText().length()!=0 && aEnginnerJunior.getTxtcorreo().getText().length()!=0
 					&& aEnginnerJunior.getTxtdireccion().getText().length()!=0 && aEnginnerJunior.getTxtcedula().getText().matches("[0-9]+") 
 					&& aEnginnerJunior.getTxtapellido().getText().matches("[a-zA-Z]+") && aEnginnerJunior.getTxtnombre().getText().matches("[a-zA-Z]+")
-					&& aEnginnerJunior.getTxttelefono().getText().matches("[0-9]+")) {
+					&& aEnginnerJunior.getTxttelefono().getText().matches("[0-9]+") && controlador.verificarCorreo(aEnginnerJunior.getTxtcorreo().getText())) {
 
 				int anio = (int) aEnginnerJunior.getComboAnio().getSelectedItem();
 				char genero = (char) aEnginnerJunior.getComboGenero().getSelectedItem();
@@ -207,6 +209,7 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 			listaPersonal.setVisible(false);
 			aEnginnerJunior.setVisible(true);
 		}
+
 		if (accion == "Mostrar") {
 			if (listaPersonal.getListaCedula().getSelectedValue() != null){
 				listaPersonal.setVisible(false);
@@ -235,6 +238,9 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 				JOptionPane.showMessageDialog(null, "Seleccione una cedula");
 			}
 
+			listaPersonal.setVisible(false);
+			informationPersonal.cargarInformacion(controlador.buscar(listaPersonal.getListaCedula().getSelectedValue()));
+			informationPersonal.setVisible(true);
 		}
 
 		if(accion== "editar") {
@@ -304,6 +310,16 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 					}
 				}
 			}
+		}
+		if(accion == "modificar") {
+			ePersonal.setVisible(true);
+			listaPersonal.setVisible(false);
+			Personal pe = controlador.buscar(listaPersonal.getListaCedula().getSelectedValue());
+			ePersonal.getTxtnombre().setText(pe.getNombre());
+			ePersonal.getTxtapellido().setText(pe.getApellido());
+			ePersonal.getTxtcorreo().setText(pe.getCorreo());
+			ePersonal.getTxtdireccion().setText(pe.getDireccion());
+			ePersonal.getTxttelefono().setText(pe.getTelefono());
 		}
 	}
 	public Controller getControlador() {
