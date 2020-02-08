@@ -1,7 +1,5 @@
 package co.edu.unbosque.view;
-
 import java.awt.Color;
-import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -38,6 +36,7 @@ public class AddPersonalComission extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
+		addWindowListener(principal);
 
 		lblcedula = new JLabel("Cedula");
 		lblcedula.setBounds(45,15,155,25);
@@ -97,8 +96,7 @@ public class AddPersonalComission extends JFrame {
 		lblanio = new JLabel("Anio");
 		lblanio.setBounds(45,226,110,19);
 		add(lblanio);
-
-		lblventa = new JLabel("Ingrerso por venta");
+		lblventa = new JLabel("Ingreso por venta");
 		lblventa.setBounds(45,330,110,25);
 		add(lblventa);
 
@@ -108,7 +106,7 @@ public class AddPersonalComission extends JFrame {
 		add(agregar);
 		
 		lbltelefono = new JLabel("Telefono");
-		lbltelefono.setBounds(25, 278, 285, 20);
+		lbltelefono.setBounds(45, 278, 285, 20);
 		add(lbltelefono);
 		
 		txttelefono = new JTextField();
@@ -128,76 +126,31 @@ public class AddPersonalComission extends JFrame {
 		add(txtventa);
 		agregar.addActionListener(principal);
 	}
-
 	public JTextField getTxtcedula() {
 		return txtcedula;
 	}
-
-	public void setTxtcedula(JTextField txtcedula) {
-		this.txtcedula = txtcedula;
-	}
-
 	public JTextField getTxtnombre() {
 		return txtnombre;
 	}
-
-	public void setTxtnombre(JTextField txtnombre) {
-		this.txtnombre = txtnombre;
-	}
-
 	public JTextField getTxtapellido() {
 		return txtapellido;
 	}
-
-	public void setTxtapellido(JTextField txtapellido) {
-		this.txtapellido = txtapellido;
-	}
-
 	public JTextField getTxtcorreo() {
 		return txtcorreo;
 	}
-
-	public void setTxtcorreo(JTextField txtcorreo) {
-		this.txtcorreo = txtcorreo;
-	}
-
 	public JTextField getTxttelefono() {
 		return txttelefono;
 	}
-
-	public void setTxttelefono(JTextField txttelefono) {
-		this.txttelefono = txttelefono;
-	}
-
 	public JTextField getTxtdireccion() {
 		return txtdireccion;
 	}
-
-	public void setTxtdireccion(JTextField txtdireccion) {
-		this.txtdireccion = txtdireccion;
-	}
-
 	public JComboBox<Integer> getComboAnio() {
 		return comboAnio;
 	}
-
-	public void setComboAnio(JComboBox<Integer> comboAnio) {
-		this.comboAnio = comboAnio;
-	}
-
 	public JComboBox<Character> getComboGenero() {
 		return comboGenero;
 	}
-
-	public void setComboGenero(JComboBox<Character> comboGenero) {
-		this.comboGenero = comboGenero;
-	}
-
 	public JTextField getTxtventa() {
 		return txtventa;
-	}
-
-	public void setTxtventa(JTextField txtventa) {
-		this.txtventa = txtventa;
 	}
 }

@@ -1,6 +1,8 @@
 package co.edu.unbosque.model;
 import java.util.ArrayList;
 
+import co.edu.unbosque.controller.Dto;
+
 public class Mundo  {
 	//E stands for employees
 	//P stands for personal
@@ -8,12 +10,18 @@ public class Mundo  {
 	private ArrayList<EngenieerSenior> eSenior;
 	private ArrayList<PersonalComission> pComission;
 	private ArrayList<Personal> personal;
+	private Dto persistencia;
 	public Mundo() {
 		
+		persistencia = new Dto();
 		eJunior = new ArrayList<EngenieerJunior>();
 		eSenior = new ArrayList<EngenieerSenior>();
 		pComission = new ArrayList<PersonalComission>();
-		personal = new ArrayList<Personal>();	
+		personal = persistencia.getPer();
+		if (personal == null) {
+			personal = new ArrayList<Personal>();
+		}
+		
 	}
 	public ArrayList<EngenieerJunior> geteJunior() {
 		return eJunior;
@@ -41,4 +49,9 @@ public class Mundo  {
 	public void setPersonal(ArrayList<Personal> personal) {
 		this.personal = personal;
 	}
+	public Dto getPersistencia() {
+		return persistencia;
+	}
+	
+	
 }

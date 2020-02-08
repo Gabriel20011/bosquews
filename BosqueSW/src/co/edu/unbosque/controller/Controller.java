@@ -12,38 +12,45 @@ public class Controller {
 
 	public Controller() {
 		m = new Mundo();
+		clasificar();
 		ventana = new MainWindow(this);
 		ventana.setVisible(true);
 
 	}
-	public void agregarComission(String cedula, String nombre, String apellido, char genero, String telefono,
+	public boolean agregarComission(String cedula, String nombre, String apellido, char genero, String telefono,
 			double salarioBase, String correo, String direccion, int anio, double venta) {
 		PersonalComission pc = new PersonalComission(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio, venta);
 		if(buscar(cedula)==null) {
 			m.getpComission().add(pc);
-			JOptionPane.showMessageDialog(null, "PERSONAL AGREGADO CIN EXITO");
+			JOptionPane.showMessageDialog(null, "PERSONAL AGREGADO CON EXITO");
+			return true;
 		}else {
 			JOptionPane.showMessageDialog(null, "UN USUARIO CON LA MISMA CEDULA YA EXISTE!!");
+			return false;
 		}
 	}
-	public void agregarSenior(String cedula, String nombre, String apellido, char genero, String telefono,
+	public boolean agregarSenior(String cedula, String nombre, String apellido, char genero, String telefono,
 			double salarioBase, String correo, String direccion, int anio, int nventas) {
 		EngenieerSenior es = new EngenieerSenior(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio, nventas);
 		if(buscar(cedula)==null) {
 			m.geteSenior().add(es);
-			JOptionPane.showMessageDialog(null, "PERSONAL AGREGADO CIN EXITO");
+			JOptionPane.showMessageDialog(null, "PERSONAL AGREGADO CON EXITO");
+			return true;
 		}else {
 			JOptionPane.showMessageDialog(null, "UN USUARIO CON LA MISMA CEDULA YA EXISTE!!");
+			return false;
 		}
 	}
-	public void agregarJunior(String cedula, String nombre, String apellido, char genero, String telefono,
+	public boolean agregarJunior(String cedula, String nombre, String apellido, char genero, String telefono,
 			double salarioBase, String correo, String direccion, int anio, int level) {
 		EngenieerJunior ej = new EngenieerJunior(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio, level);
 		if(buscar(cedula)==null) {
 			m.geteJunior().add(ej);
-			JOptionPane.showMessageDialog(null, "PERSONAL AGREGADO CIN EXITO");
+			JOptionPane.showMessageDialog(null, "PERSONAL AGREGADO CON EXITO");
+			return true;
 		}else {
 			JOptionPane.showMessageDialog(null, "UN USUARIO CON LA MISMA CEDULA YA EXISTE!!");
+			return false;
 		}
 	}
 	public void modificar(String cedula, String nombre, String apellido, String telefono, String correo, String direccion) {
@@ -71,19 +78,23 @@ public class Controller {
 		}
 	}
 
-	public void eliminar(String cedula) {
+	public boolean eliminar(String cedula) {
 		Personal per = buscar(cedula);
+		boolean a = false;
 		if(per!=null && per instanceof PersonalComission) {
 			m.getpComission().remove(per);
+			a = true;
 		}	
 		if(per!=null && per instanceof EngenieerSenior) {
 			m.geteSenior().remove(per);
+			a = true;
 		}
 		if(per!=null && per instanceof EngenieerJunior) {
 			m.geteJunior().remove(per);
+			a = true;
 		}
+		return a;
 	}
-
 	public Personal buscar(String cedula ) {
 		Personal per = null;
 		for (int i = 0; i < m.geteJunior().size(); i++) {
@@ -126,6 +137,15 @@ public class Controller {
 		for (int i = 0; i < m.geteSenior().size(); i++) {
 			m.getPersonal().add(m.geteSenior().get(i));
 		}
+	}
+	public boolean verificarCorreo(String correo) {
+		char[] a = correo.toCharArray();
+		for (int i = 0; i < a.length; i++) {
+			if(a[i]=='@') {
+				return true;
+			}
+		}
+		return false;
 	}
 	public Mundo getM() {
 		return m;

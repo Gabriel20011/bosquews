@@ -14,6 +14,7 @@ public class EngenieerJunior extends PersonalSalary implements Serializable {
 			double salarioBase, String correo, String direccion, int anio, int level) {
 		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
 		this.level = level;
+		calcularSalario();
 		// TODO Auto-generated constructor stub
 	}
 	

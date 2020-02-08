@@ -1,17 +1,11 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 
 public class AddEngineerSenior extends JFrame {
 
@@ -35,7 +29,6 @@ public class AddEngineerSenior extends JFrame {
 	private JButton menu;
 	private JComboBox<Character> comboGenero;
 	private JComboBox<Integer> comboAnio;
-	private JTextField textField;
 
 	public AddEngineerSenior(MainWindow principal) {
 		setTitle("Nuevo Ingeniero Senior");
@@ -45,6 +38,7 @@ public class AddEngineerSenior extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
+		addWindowListener(principal);
 
 		lblcedula = new JLabel("Cedula");
 		lblcedula.setBounds(45,15,155,25);
@@ -135,85 +129,31 @@ public class AddEngineerSenior extends JFrame {
 		add(comboAnio);
 		agregar.addActionListener(principal);
 	}
-
-	public JLabel getLblcedula() {
-		return lblcedula;
-	}
-
-	public JLabel getLblnombre() {
-		return lblnombre;
-	}
-
-	public JLabel getLblapellido() {
-		return lblapellido;
-	}
-
-	public JLabel getLblgenero() {
-		return lblgenero;
-	}
-
-	public JLabel getLbltelefono() {
-		return lbltelefono;
-	}
-
-	public JLabel getLblcorreo() {
-		return lblcorreo;
-	}
-
-	public JLabel getLbldireccion() {
-		return lbldireccion;
-	}
-
-	public JLabel getLblanio() {
-		return lblanio;
-	}
-
-	public JLabel getLblnventas() {
-		return lblnventas;
-	}
-
 	public JTextField getTxtnombre() {
 		return txtnombre;
 	}
-
 	public JTextField getTxtcedula() {
 		return txtcedula;
 	}
-
 	public JTextField getTxtapellido() {
 		return txtapellido;
 	}
-
 	public JTextField getTxtcorreo() {
 		return txtcorreo;
 	}
-
 	public JTextField getTxttelefono() {
 		return txttelefono;
 	}
-
 	public JTextField getTxtdireccion() {
 		return txtdireccion;
 	}
-
 	public JTextField getTxtnventas() {
 		return txtnventas;
 	}
-
-	public JButton getAgregar() {
-		return agregar;
-	}
-
 	public JComboBox<Character> getComboGenero() {
 		return comboGenero;
 	}
-
 	public JComboBox<Integer> getComboAnio() {
 		return comboAnio;
 	}
-
-	public JTextField getTextField() {
-		return textField;
-	}
-	
 }
