@@ -107,22 +107,26 @@ public class ListaPersonal extends JFrame {
 		scrollNombres.setBounds(10, 10, 250, 500);
 		add(scrollNombres);
 
-
 	}
 	private void cargarNombres(String tipoPersonal) {
 		if (tipoPersonal.equals("Senior")) {
+			System.out.println(principal.getControlador().getM().geteSenior().size());
 			for (int i = 0 ; i < principal.getControlador().getM().geteSenior().size() ; i++) {
 				nombres.add(principal.getControlador().getM().geteSenior().get(i).getNombre());
 			}
 
 		}
 		if (tipoPersonal.equals("Junior")) {
+
+			System.out.println(principal.getControlador().getM().geteSenior().size());
 			for (int i = 0 ; i < principal.getControlador().getM().geteJunior().size() ; i++) {
 				nombres.add(principal.getControlador().getM().geteJunior().get(i).getNombre());
 			}
 
 		}
 		if (tipoPersonal.equals("Comission")) {
+
+			System.out.println(principal.getControlador().getM().geteSenior().size());
 			for (int i = 0 ; i < principal.getControlador().getM().getpComission().size() ; i++) {
 				nombres.add(principal.getControlador().getM().getpComission().get(i).getNombre());
 			}

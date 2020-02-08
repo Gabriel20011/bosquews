@@ -57,6 +57,10 @@ public class AddEngineerSenior extends JFrame {
 		lblnombre = new JLabel("Nombre");
 		lblnombre.setBounds(45,50,170,25);
 		add(lblnombre);
+		
+		txtnombre = new JTextField();
+		txtnombre.setBounds(290, 50, 285, 25);
+		add(txtnombre);
 
 		lblapellido = new JLabel("Apellidos");
 		lblapellido.setBounds(45,90,170,25);
@@ -76,7 +80,7 @@ public class AddEngineerSenior extends JFrame {
 		comboGenero.setBounds(290, 130, 285, 22);
 		add(comboGenero);
 
-		lblcorreo = new JLabel("Telefono");
+		lblcorreo = new JLabel("Correo");
 		lblcorreo.setBounds(45,160,110,20);
 		add(lblcorreo);
 
@@ -89,7 +93,7 @@ public class AddEngineerSenior extends JFrame {
 		add(lbldireccion);
 
 		txtdireccion = new JTextField();
-		txtdireccion.setBounds(290,192,285,20);
+		txtdireccion.setBounds(290,190,285,20);
 		add(txtdireccion);
 
 		lblanio = new JLabel("Anio");
@@ -114,11 +118,12 @@ public class AddEngineerSenior extends JFrame {
 		menu.setBounds(355, 400, 200, 60);
 		add(menu);
 
-		textField = new JTextField();
-		textField.setBounds(290, 50, 285, 25);
-		add(textField);
+		lbltelefono = new JLabel("Telefono");
+		lbltelefono.setBounds(45, 278, 285, 20);
+		add(lbltelefono);
 		
 		txttelefono = new JTextField();
+		txttelefono.setBounds(290, 278, 285, 20);
 		add(txttelefono);
 
 		comboAnio = new JComboBox<Integer>();

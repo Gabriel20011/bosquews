@@ -93,9 +93,7 @@ public class MainWindow extends JFrame implements ActionListener {
 		if(accion == "agregar Senior") {
 			if(aEngineerSenior.getTxtnombre().getText().length()!=0 && aEngineerSenior.getTxtapellido().getText().length()!=0 
 					&& aEngineerSenior.getTxtcedula().getText().length()!=0 && aEngineerSenior.getTxtcorreo().getText().length()!=0
-					&& aEngineerSenior.getTxtdireccion().getText().length()!=0 && aEngineerSenior.getTxtnventas().getText().length()!=0
-					&& aEngineerSenior.getTxtcedula().getText().matches("[0-9]+") && aEngineerSenior.getTxtnventas().getText().matches("[0-9]+") 
-					&& aEngineerSenior.getTxtapellido().getText().contains("[a-zA-Z]+") && aEngineerSenior.getTxtnombre().getText().contains("[a-zA-Z]+")) {
+					&& aEngineerSenior.getTxtdireccion().getText().length()!=0 && aEngineerSenior.getTxtnventas().getText().length()!=0) {
 
 				int anio = (int) aEngineerSenior.getComboAnio().getSelectedItem();
 				char genero = (char) aEngineerSenior.getComboGenero().getSelectedIndex();

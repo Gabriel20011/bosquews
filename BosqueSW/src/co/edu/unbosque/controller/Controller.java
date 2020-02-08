@@ -117,7 +117,7 @@ public class Controller {
 			m.getPersonal().add(m.geteJunior().get(i));
 		}
 		for (int i = 0; i < m.geteSenior().size(); i++) {
-			m.geteSenior().add(m.geteSenior().get(i));
+			m.getPersonal().add(m.geteSenior().get(i));
 		}
 	}
 	public Mundo getM() {

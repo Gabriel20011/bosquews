@@ -23,7 +23,7 @@ public class AddEnginerJunior extends JFrame  {
 	private JLabel lbldireccion;
 	private JLabel lblanio;
 	private JLabel lblnivel;
-	
+	private JLabel lbltelefono;
 	private JTextField txtcedula;
 	private JTextField txtnombre;
 	private JTextField txtapellido;
@@ -97,7 +97,7 @@ public class AddEnginerJunior extends JFrame  {
 		add(menu);
 
 		txtdireccion = new JTextField();
-		txtdireccion.setBounds(290,192,285,20);
+		txtdireccion.setBounds(290,190,285,20);
 		add(txtdireccion);
 
 		lblanio = new JLabel("Anio");
@@ -113,9 +113,12 @@ public class AddEnginerJunior extends JFrame  {
 		agregar.setActionCommand("agregar Junior");
 		add(agregar);
 		
-		lbl
+		lbltelefono = new JLabel("Telefono");
+		lbltelefono.setBounds(25, 278, 285, 20);
+		add(lbltelefono);
 		
 		txttelefono = new JTextField();
+		txttelefono.setBounds(290, 278, 285, 20);
 		add(txttelefono);
 
 		comboAnio = new JComboBox<Integer>();
