@@ -108,12 +108,14 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 			listaPersonal.setVisible(false);
 			setVisible(true);
 			
-			informationPersonal.getTxtapellido().setText("");
-			informationPersonal.getTxtnombre().setText("");
-			informationPersonal.getTxtcedula().setText("");
-			informationPersonal.getTxtdireccion().setText("");
-			informationPersonal.getTxtcorreo().setText("");
-			informationPersonal.getTxttelefono().setText("");
+			if (informationPersonal != null) {
+				informationPersonal.getTxtapellido().setText("");
+				informationPersonal.getTxtnombre().setText("");
+				informationPersonal.getTxtcedula().setText("");
+				informationPersonal.getTxtdireccion().setText("");
+				informationPersonal.getTxtcorreo().setText("");
+				informationPersonal.getTxttelefono().setText("");
+			}
 		}
 		if (accion == "Ingeniero por Comision") {
 			listaPersonal = new ListaPersonal(this);
@@ -261,10 +263,6 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 			else {
 				JOptionPane.showMessageDialog(null, "Seleccione una cedula");
 			}
-
-			listaPersonal.setVisible(false);
-			informationPersonal.cargarInformacion(controlador.buscar(listaPersonal.getListaCedula().getSelectedValue()));
-			informationPersonal.setVisible(true);
 		}
 
 		if(accion== "editar") {
