@@ -24,6 +24,7 @@ public class EngineerWindow extends JFrame{
 		setLocationRelativeTo(null);
 		getContentPane().setBackground(new Color(240,235,190));
 		getContentPane().setLayout(null);
+		addWindowListener(principal);
 		
 		btncomision = new JButton("Ingeniero por Comision");
 		btncomision.setBounds(10,15,200,45);

@@ -37,6 +37,7 @@ public class AddPersonalComission extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
+		addWindowListener(principal);
 
 		lblcedula = new JLabel("Cedula");
 		lblcedula.setBounds(45,15,155,25);
@@ -97,7 +98,7 @@ public class AddPersonalComission extends JFrame {
 		lblanio.setBounds(45,226,110,19);
 		add(lblanio);
 
-		lblventa = new JLabel("Ingrerso por venta");
+		lblventa = new JLabel("Ingreso por venta");
 		lblventa.setBounds(45,330,110,25);
 		add(lblventa);
 
@@ -107,7 +108,7 @@ public class AddPersonalComission extends JFrame {
 		add(agregar);
 		
 		lbltelefono = new JLabel("Telefono");
-		lbltelefono.setBounds(25, 278, 285, 20);
+		lbltelefono.setBounds(45, 278, 285, 20);
 		add(lbltelefono);
 		
 		txttelefono = new JTextField();

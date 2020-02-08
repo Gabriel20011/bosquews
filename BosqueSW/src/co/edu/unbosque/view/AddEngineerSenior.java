@@ -1,17 +1,11 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 
 public class AddEngineerSenior extends JFrame {
 
@@ -45,6 +39,7 @@ public class AddEngineerSenior extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
+		addWindowListener(principal);
 
 		lblcedula = new JLabel("Cedula");
 		lblcedula.setBounds(45,15,155,25);

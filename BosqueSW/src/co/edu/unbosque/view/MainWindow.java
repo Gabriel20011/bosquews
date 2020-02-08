@@ -3,12 +3,17 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import co.edu.unbosque.controller.Controller;
+import co.edu.unbosque.model.Personal;
 
-public class MainWindow extends JFrame implements ActionListener {
+public class MainWindow extends JFrame implements ActionListener, WindowListener {
 
 
 	private JButton btnveringenieros;
@@ -20,6 +25,8 @@ public class MainWindow extends JFrame implements ActionListener {
 	private AddPersonalComission aPersonalComission;
 	private ListaPersonal listaPersonal;
 	private ShowPersonal informationPersonal;
+	private EditPersonal ePersonal;
+
 
 	public MainWindow(Controller controlador) {
 		this.controlador = controlador;
@@ -40,6 +47,7 @@ public class MainWindow extends JFrame implements ActionListener {
 		btnveringenieros.setFont(new Font("Lucida Calligraphy", Font.TRUETYPE_FONT,14));
 		add(btnveringenieros);
 		btnveringenieros.addActionListener(this);
+		addWindowListener(this);
 	}
 	public void intanciarPaneles() {
 		pTiposIngenieros = new EngineerWindow(this);
@@ -50,6 +58,7 @@ public class MainWindow extends JFrame implements ActionListener {
 		aPersonalComission = new AddPersonalComission(this);
 		listaPersonal = new ListaPersonal(this);
 		informationPersonal = new ShowPersonal(this);
+		ePersonal = new EditPersonal(this);
 	}
 	public void ocultarPaneles() {
 		pTiposIngenieros.setVisible(false);
@@ -57,6 +66,7 @@ public class MainWindow extends JFrame implements ActionListener {
 		aEngineerSenior.setVisible(false);
 		aEnginnerJunior.setVisible(false);
 		aPersonalComission.setVisible(false);
+		informationPersonal.setVisible(false);
 	}
 	public JButton getBtnveringenieros() {
 		return btnveringenieros;
@@ -102,7 +112,7 @@ public class MainWindow extends JFrame implements ActionListener {
 					&& aEngineerSenior.getTxtnombre().getText().matches("[a-zA-Z]+") && aEngineerSenior.getTxtnventas().getText().matches("[0-9]+")) {
 
 				int anio = (int) aEngineerSenior.getComboAnio().getSelectedItem();
-				char genero = (char) aEngineerSenior.getComboGenero().getSelectedIndex();
+				char genero = (char) aEngineerSenior.getComboGenero().getSelectedItem();
 				if (controlador.agregarSenior(aEngineerSenior.getTxtcedula().getText(), aEngineerSenior.getTxtnombre().getText(),
 						aEngineerSenior.getTxtapellido().getText(), genero, aEngineerSenior.getTxttelefono().getText(),
 						0, aEngineerSenior.getTxtcorreo().getText(), aEngineerSenior.getTxtdireccion().getText(),
@@ -114,10 +124,6 @@ public class MainWindow extends JFrame implements ActionListener {
 					listaPersonal.setVisible(true);
 
 				}
-
-				aEngineerSenior.setVisible(false);
-				listaPersonal.setVisible(true);
-				controlador.converger();
 
 			}
 			else {
@@ -131,12 +137,11 @@ public class MainWindow extends JFrame implements ActionListener {
 					&& aEnginnerJunior.getTxtapellido().getText().matches("[a-zA-Z]+") && aEnginnerJunior.getTxtnombre().getText().matches("[a-zA-Z]+")) {
 
 				int anio = (int) aEnginnerJunior.getComboAnio().getSelectedItem();
-				char genero = (char) aEnginnerJunior.getComboGenero().getSelectedIndex();
+				char genero = (char) aEnginnerJunior.getComboGenero().getSelectedItem();
 				int level = (int) aEnginnerJunior.getComboNivel().getSelectedItem();
 				if (controlador.agregarJunior(aEnginnerJunior.getTxtcedula().getText(), aEnginnerJunior.getTxtnombre().getText(),
 						aEnginnerJunior.getTxtapellido().getText(), genero, aEnginnerJunior.getTxttelefono().getText(),0, aEnginnerJunior.getTxtcorreo().getText(),
 						aEnginnerJunior.getTxtdireccion().getText(), anio, level)) {
-					controlador.converger();
 					aEnginnerJunior.setVisible(false);
 					listaPersonal = new ListaPersonal(this);
 					listaPersonal.iniciarBotones("Junior");
@@ -160,11 +165,10 @@ public class MainWindow extends JFrame implements ActionListener {
 					&& aPersonalComission.getTxtcedula().getText().matches("[0-9]+") && aPersonalComission.getTxtapellido().getText().matches("[a-zA-Z]+")
 					&& aPersonalComission.getTxtnombre().getText().matches("[a-zA-Z]+") && aPersonalComission.getTxtventa().getText().matches("[0-9]+")) {
 				int anio = (int) aPersonalComission.getComboAnio().getSelectedItem();
-				char genero = (char) aPersonalComission.getComboGenero().getSelectedIndex();
+				char genero = (char) aPersonalComission.getComboGenero().getSelectedItem();
 				if (controlador.agregarComission(aPersonalComission.getTxtcedula().getText(), aPersonalComission.getTxtnombre().getText(), aPersonalComission.getTxtapellido().getText(),
 						genero, aPersonalComission.getTxttelefono().getText(), 0, aPersonalComission.getTxtcorreo().getText(), aPersonalComission.getTxtdireccion().getText(),
 						anio, Double.parseDouble(aPersonalComission.getTxtventa().getText()))) {
-					controlador.converger();
 					aPersonalComission.setVisible(false);
 					listaPersonal = new ListaPersonal(this);
 					listaPersonal.iniciarBotones("Comission");
@@ -194,12 +198,59 @@ public class MainWindow extends JFrame implements ActionListener {
 			aEnginnerJunior.setVisible(true);
 		}
 		if (accion == "Mostrar") {
+			listaPersonal.setVisible(false);
 			informationPersonal.cargarInformacion(controlador.buscar(listaPersonal.getListaCedula().getSelectedValue()));
 			informationPersonal.setVisible(true);
-			
+		}
+		if(accion == "modificar") {
+			ePersonal.setVisible(true);
+			listaPersonal.setVisible(false);
+			Personal pe = controlador.buscar(listaPersonal.getListaCedula().getSelectedValue());
+			ePersonal.getTxtnombre().setText(pe.getNombre());
+			ePersonal.getTxtapellido().setText(pe.getApellido());
+			ePersonal.getTxtcorreo().setText(pe.getCorreo());
+			ePersonal.getTxtdireccion().setText(pe.getDireccion());
+			ePersonal.getTxttelefono().setText(pe.getTelefono());
+
 		}
 	}
 	public Controller getControlador() {
 		return controlador;
+	}
+	@Override
+	public void windowActivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowClosed(WindowEvent arg0) {
+		
+	}
+	@Override
+	public void windowClosing(WindowEvent arg0) {
+		JOptionPane.showMessageDialog(null, "Hasta Luego");
+		controlador.converger();
+		controlador.getM().getPersistencia().actualizarPersonal(controlador.getM().getPersonal());
+		
+	}
+	@Override
+	public void windowDeactivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowDeiconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowIconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowOpened(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }

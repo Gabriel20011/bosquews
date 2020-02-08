@@ -38,7 +38,6 @@ public class Dto {
 			fl = new FileInputStream(archivo);
 			ob = new ObjectInputStream(fl);
 			per = (ArrayList<Personal>) ob.readObject();
-			System.out.println("Lectura existosa!");
 			ob.close();
 			fl.close();
 		} catch (FileNotFoundException e) {

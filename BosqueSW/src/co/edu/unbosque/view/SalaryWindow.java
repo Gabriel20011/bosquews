@@ -22,6 +22,7 @@ public class SalaryWindow extends JFrame{
 		setLocationRelativeTo(null);
 		setBackground(new Color(240,235,190));
 		setLayout(null);
+		addWindowListener(principal);
 		
 		btnveringenieroS = new JButton("Ingenieros Senior");
 		btnveringenieroS.setForeground(new Color(240,235,190));

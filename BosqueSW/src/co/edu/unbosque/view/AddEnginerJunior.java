@@ -37,6 +37,7 @@ public class AddEnginerJunior extends JFrame  {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
+		addWindowListener(principal);
 
 		lblcedula = new JLabel("Cedula");
 		lblcedula.setBounds(45,15,155,25);
