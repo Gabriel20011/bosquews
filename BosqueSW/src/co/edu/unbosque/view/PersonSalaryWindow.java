@@ -7,11 +7,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class PersonSalaryWindow extends JFrame implements ActionListener {
+public class PersonSalaryWindow extends JFrame {
 	public JButton btncomision;
 	public JButton btnsalario;
 	
-		public PersonSalaryWindow() {
+		public PersonSalaryWindow(MainWindow principal) {
 		
 		setSize(400,500);
 		setResizable(false);
@@ -23,20 +23,14 @@ public class PersonSalaryWindow extends JFrame implements ActionListener {
 		btncomision = new JButton("Ingeniero Senior");
 		btncomision.setBounds(90,50,220,100);
 		getContentPane().add(btncomision);
-		btncomision.addActionListener(this);
+		btncomision.addActionListener(principal);
 		btncomision.setBackground(Color.lightGray);
 		
 		btnsalario = new JButton("Ingeniero Junior");
 		btnsalario.setBounds(90,300,220,100);
 		getContentPane().add(btnsalario);
-		btnsalario.addActionListener(this);
+		btnsalario.addActionListener(principal);
 		btnsalario.setBackground(Color.lightGray);
-		
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
