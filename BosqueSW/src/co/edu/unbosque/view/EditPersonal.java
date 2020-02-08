@@ -41,9 +41,7 @@ public class EditPersonal extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
-	}
-		public void iniciarFormulario(String tipoPersonal) {
-			setTitle("Editar " +tipoPersonal);
+
 		lblcedula = new JLabel("Cedula");
 		lblcedula.setBounds(45,15,155,25);
 		add(lblcedula);
@@ -100,7 +98,7 @@ public class EditPersonal extends JFrame {
 
 		editar = new  JButton("CONFIRMAR");
 		editar.setBounds(25,400,200,60);
-		editar.setActionCommand("editar Senior");
+		editar.setActionCommand("editar");
 		add(editar);
 		
 		menu = new JButton("Menu");
@@ -124,6 +122,9 @@ public class EditPersonal extends JFrame {
 		comboAnio.setBounds(290, 225, 285, 20);
 		add(comboAnio);
 		editar.addActionListener(principal);
+	}
+	public void iniciarFormulario(String tipoPersonal) {
+		setTitle("Editar " +tipoPersonal);
 		if(tipoPersonal.contentEquals("Comission")) {
 			lblventa = new JLabel("Numero de ventas");
 			lblventa.setBounds(45,330,150,25);
@@ -151,6 +152,7 @@ public class EditPersonal extends JFrame {
 			comboNivel.addItem(5);
 			add(comboNivel);
 		}
+		
 	}
 		public JTextField getTxtventa() {
 			return txtventa;

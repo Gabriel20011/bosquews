@@ -1,7 +1,6 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
-import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -104,7 +103,7 @@ public class AddPersonalComission extends JFrame {
 
 		agregar = new  JButton("AGREGAR");
 		agregar.setBounds(25,400,200,60);
-		agregar.setActionCommand("agregar Junior");
+		agregar.setActionCommand("agregar Comission");
 		add(agregar);
 		
 		lbltelefono = new JLabel("Telefono");
