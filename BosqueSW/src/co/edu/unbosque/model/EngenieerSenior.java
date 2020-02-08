@@ -2,14 +2,14 @@ package co.edu.unbosque.model;
 import java.io.Serializable;
 
 public class EngenieerSenior extends PersonalSalary implements Serializable {
-
-	public EngenieerSenior(String cedula, String nombre, String apellido, char genero, String telefono,
-			double salarioBase, String correo, String direccion, int anio) {
-		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
-		// TODO Auto-generated constructor stub
-	}
 	private int nVentas;
 
+	public EngenieerSenior(String cedula, String nombre, String apellido, char genero, String telefono,
+			double salarioBase, String correo, String direccion, int anio,int nVentas) {
+		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
+		// TODO Auto-generated constructor stub
+		this.nVentas = nVentas;
+	}
 	@Override
 	public double calcularSalario() {
 		setSalarioBase(3500000);

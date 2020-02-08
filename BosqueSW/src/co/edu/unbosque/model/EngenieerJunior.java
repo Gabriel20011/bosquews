@@ -3,6 +3,10 @@ package co.edu.unbosque.model;
 import java.io.Serializable;
 
 public class EngenieerJunior extends PersonalSalary implements Serializable {
+	
+	/**
+	 * 
+	 */
 
 	private int level;
 
