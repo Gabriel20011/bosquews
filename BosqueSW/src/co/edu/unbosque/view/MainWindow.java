@@ -47,8 +47,8 @@ public class MainWindow extends JFrame implements ActionListener {
 		aEngineerSenior = new AddEngineerSenior(this);
 		aEnginnerJunior = new AddEnginerJunior(this);
 		aPersonalComission = new AddPersonalComission(this);
-		listaPersonal = new ListaPersonal(this);
 		aPersonalComission = new AddPersonalComission(this);
+		listaPersonal = new ListaPersonal(this);
 	}
 	public void ocultarPaneles() {
 		pTiposIngenieros.setVisible(false);
@@ -56,7 +56,6 @@ public class MainWindow extends JFrame implements ActionListener {
 		aEngineerSenior.setVisible(false);
 		aEnginnerJunior.setVisible(false);
 		aPersonalComission.setVisible(false);
-		listaPersonal.setVisible(false);
 	}
 	public JButton getBtnveringenieros() {
 		return btnveringenieros;
@@ -69,9 +68,11 @@ public class MainWindow extends JFrame implements ActionListener {
 		}
 		if (accion == "Menu") {
 			ocultarPaneles();
+			listaPersonal.setVisible(false);
 			setVisible(true);
 		}
 		if (accion == "Ingeniero por Comision") {
+			listaPersonal = new ListaPersonal(this);
 			pTiposIngenieros.setVisible(false);
 			listaPersonal.iniciarBotones("Comission");
 			listaPersonal.setVisible(true);
@@ -81,11 +82,13 @@ public class MainWindow extends JFrame implements ActionListener {
 			pSalaryEnginieers.setVisible(true);
 		}
 		if( accion == "Ingenieros Senior") {
+			listaPersonal = new ListaPersonal(this);
 			pSalaryEnginieers.setVisible(false);
 			listaPersonal.iniciarBotones("Senior");
 			listaPersonal.setVisible(true);
 		}
 		if(accion == "Ingenieros Junior") {
+			listaPersonal = new ListaPersonal(this);
 			pSalaryEnginieers.setVisible(false);
 			listaPersonal.iniciarBotones("Junior");
 			listaPersonal.setVisible(true);
@@ -102,6 +105,8 @@ public class MainWindow extends JFrame implements ActionListener {
 						0, aEngineerSenior.getTxtcorreo().getText(), aEngineerSenior.getTxtdireccion().getText(),
 						anio, Integer.parseInt(aEngineerSenior.getTxtnventas().getText()));
 
+				aEngineerSenior.setVisible(false);
+				listaPersonal.setVisible(true);
 				controlador.converger();
 			}
 			else {
@@ -122,6 +127,8 @@ public class MainWindow extends JFrame implements ActionListener {
 						aEnginnerJunior.getTxtdireccion().getText(), anio, level);
 
 				controlador.converger();
+				aEnginnerJunior.setVisible(false);
+				listaPersonal.setVisible(true);
 			}else {
 				JOptionPane.showMessageDialog(null, "POR FAVOR INGRESE BIEN LOS DATOS");
 			}
@@ -132,6 +139,10 @@ public class MainWindow extends JFrame implements ActionListener {
 					&& aPersonalComission.getTxtdireccion().getText().length()!=0 && aPersonalComission.getTxtcedula().getText().matches("[0-9]+") 
 					&& aPersonalComission.getTxtapellido().getText().contains("[a-zA-Z]+") && aPersonalComission.getTxtnombre().getText().contains("[a-zA-Z]+")
 					&& aPersonalComission.getTxtventa().getText().length()!=0) {
+				
+				controlador.converger();
+				aPersonalComission.setVisible(false);
+				listaPersonal.setVisible(true);
 			}else {
 				JOptionPane.showMessageDialog(null, "POR FAVOR INGRESE BIEN LOS DATOS");
 			}

@@ -25,12 +25,12 @@ public class ListaPersonal extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(new Color(240,235,190));
 		setLayout(null);
-		nombres = new ArrayList<String>();
 
 	}
 
 	public void iniciarBotones(String tipoPersonal) {
 		setTitle("Lista de Ingenieros " + tipoPersonal);
+		nombres = new ArrayList<String>();
 
 		btnAgregar = new JButton("Agregar");
 		btnAgregar.setForeground(new Color(240,235,190));
@@ -118,7 +118,7 @@ public class ListaPersonal extends JFrame {
 		}
 		if (tipoPersonal.equals("Junior")) {
 
-			System.out.println(principal.getControlador().getM().geteSenior().size());
+			System.out.println(principal.getControlador().getM().geteJunior().size());
 			for (int i = 0 ; i < principal.getControlador().getM().geteJunior().size() ; i++) {
 				nombres.add(principal.getControlador().getM().geteJunior().get(i).getNombre());
 			}
@@ -126,7 +126,7 @@ public class ListaPersonal extends JFrame {
 		}
 		if (tipoPersonal.equals("Comission")) {
 
-			System.out.println(principal.getControlador().getM().geteSenior().size());
+			System.out.println(principal.getControlador().getM().getpComission().size());
 			for (int i = 0 ; i < principal.getControlador().getM().getpComission().size() ; i++) {
 				nombres.add(principal.getControlador().getM().getpComission().get(i).getNombre());
 			}
