@@ -1,31 +1,44 @@
 package co.edu.unbosque.controller;
 import java.util.ArrayList;
 import co.edu.unbosque.model.*;
+import co.edu.unbosque.view.MainWindow;
 
 public class Controller {
 	
 	private Mundo m;
+	private MainWindow ventana;
 
 	public Controller() {
 		m = new Mundo();
+		agregarComission("1019152187", "Juan", "Quintero", 'M', "321223755", 0, "Juandavidquinter@hotmail.com", "Calle 152", 2017, 4);
+		ventana = new MainWindow(this);
+		ventana.setVisible(true);
+		
 	}
-
+	public void agregarComission(String cedula, String nombre, String apellido, char genero, String telefono,
+			double salarioBase, String correo, String direccion, int anio, double venta) {
+		PersonalComission pc = new PersonalComission(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio, venta);
+		if(buscar(cedula)==null) {
+			m.getpComission().add(pc);
+		}
+		System.out.println("Agregado !");
+	}
 	public void agregarSenior(String cedula, String nombre, String apellido, char genero, String telefono,
-			double salarioBase, String correo, String direccion, int anio) {
-		EngenieerSenior es = new EngenieerSenior(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
+			double salarioBase, String correo, String direccion, int anio, int nventas) {
+		EngenieerSenior es = new EngenieerSenior(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio, nventas);
 		if(buscar(cedula)==null) {
 			m.geteSenior().add(es);
 		}
+		System.out.println("Agregado !");
 	}
-	
 	public void agregarJunior(String cedula, String nombre, String apellido, char genero, String telefono,
 			double salarioBase, String correo, String direccion, int anio, int level) {
 		EngenieerJunior ej = new EngenieerJunior(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio, level);
 		if(buscar(cedula)==null) {
 			m.geteJunior().add(ej);
 		}
+		System.out.println("Agregado !");
 	}
-	
 	public void modificar(String cedula, String nombre, String apellido, String telefono, String correo, String direccion) {
 		Personal per = buscar(cedula);
 		if(per!=null && per instanceof PersonalComission) {
@@ -94,8 +107,7 @@ public class Controller {
 				m.geteSenior().add((EngenieerSenior) m.getPersonal().get(i));
 			}
 		}
-	}
-	
+	}	
 	public void converger() {
 		m.setPersonal(new ArrayList<Personal>());
 		for (int i = 0; i < m.getpComission().size(); i++) {
@@ -108,7 +120,6 @@ public class Controller {
 			m.geteSenior().add(m.geteSenior().get(i));
 		}
 	}
-	
 	public Mundo getM() {
 		return m;
 	}
@@ -116,5 +127,4 @@ public class Controller {
 	public void setM(Mundo m) {
 		this.m = m;
 	}
-
 }

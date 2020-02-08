@@ -34,11 +34,21 @@ public class EngenieerSenior extends PersonalSalary implements Serializable {
 	 * <b> post </b> obtener el numero de ventas
 	 */
 	private int nVentas;
+
 	/**
 	 * Este metodo permite calcular el salario de un ingeniero Junior
 	 * <b>post</b> este metodo permite calcular el salario de un ingeniero Junior
 	 * @return el salario de cada ingeniero Junior
 	 */
+
+
+	public EngenieerSenior(String cedula, String nombre, String apellido, char genero, String telefono,
+			double salarioBase, String correo, String direccion, int anio,int nVentas) {
+		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
+		// TODO Auto-generated constructor stub
+		this.nVentas = nVentas;
+	}
+
 	@Override
 	public double calcularSalario() {
 		setSalarioBase(3500000);
