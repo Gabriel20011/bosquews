@@ -14,7 +14,9 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
 public class AddEngineerSenior extends JFrame {
-
+	/**
+	 * Ventana para agregar un ingeniero Sennior
+	 */
 	private JLabel lblcedula;
 	private JLabel lblnombre;
 	private JLabel lblapellido;
@@ -36,7 +38,10 @@ public class AddEngineerSenior extends JFrame {
 	private JComboBox<Character> comboGenero;
 	private JComboBox<Integer> comboAnio;
 	private JTextField textField;
-
+	/**
+	 * constructor de la clase ingeniero Junior
+	 * <b> post </b> inicializar la vista
+	 */
 	public AddEngineerSenior(MainWindow principal) {
 		setTitle("Nuevo Ingeniero Senior");
 		setSize(600,500);
@@ -130,83 +135,91 @@ public class AddEngineerSenior extends JFrame {
 		add(comboAnio);
 		agregar.addActionListener(principal);
 	}
-
-	public JLabel getLblcedula() {
-		return lblcedula;
-	}
-
-	public JLabel getLblnombre() {
-		return lblnombre;
-	}
-
-	public JLabel getLblapellido() {
-		return lblapellido;
-	}
-
-	public JLabel getLblgenero() {
-		return lblgenero;
-	}
-
-	public JLabel getLbltelefono() {
-		return lbltelefono;
-	}
-
-	public JLabel getLblcorreo() {
-		return lblcorreo;
-	}
-
-	public JLabel getLbldireccion() {
-		return lbldireccion;
-	}
-
-	public JLabel getLblanio() {
-		return lblanio;
-	}
-
-	public JLabel getLblnventas() {
-		return lblnventas;
-	}
-
+	/**
+	 * metodo para obtener el campo del mnombre del ingeniero
+	 * <b> post </b> obtener el nombre del usuario
+	 * @return txtnombre es el nombre del ingeniero
+	 */
 	public JTextField getTxtnombre() {
 		return txtnombre;
 	}
-
+	/**
+	 * metodo para obtener la cedula del ingeniero
+	 * <b> post </b> obtener la cedula del usuario
+	 * @return txtcedula es la cedula del ingeniero
+	 */
 	public JTextField getTxtcedula() {
 		return txtcedula;
 	}
-
+	/**
+	 * metodo para obtener el apellido del ingeniero
+	 * <b> post </b> obtener el apellido del usuario
+	 * @return txtapellido es el apellido del ingeniero
+	 */
 	public JTextField getTxtapellido() {
 		return txtapellido;
 	}
-
+	/**
+	 * metodo para obtener el correo del ingeniero
+	 * <b> post </b> obtener el correo del usuario
+	 * @return lblcedula es el correo del ingeniero
+	 */
 	public JTextField getTxtcorreo() {
 		return txtcorreo;
 	}
-
+	/**
+	 * metodo para obtener el telefono del ingeniero
+	 * <b> post </b> obtener el telefono del usuario
+	 * @return lblcedula es el telefono del ingeniero
+	 */
 	public JTextField getTxttelefono() {
 		return txttelefono;
 	}
-
+	/**
+	 * metodo para obtener la direccion del ingeniero
+	 * <b> post </b> obtener la direccion del usuario
+	 * @return lblcedula es la direccion del ingeniero
+	 */
 	public JTextField getTxtdireccion() {
 		return txtdireccion;
 	}
-
+	/**
+	 * metodo para obtener las ventas del ingeniero
+	 * <b> post </b> obtener las ventas del usuario
+	 * @return lblcedula es las ventas del ingeniero
+	 */
 	public JTextField getTxtnventas() {
 		return txtnventas;
 	}
-
+	/**
+	 * metodo para obtener el boton de agregar
+	 * <b> post </b> hacer una accion
+	 * @return agregar es el boton donde retorna una accion
+	 */
 	public JButton getAgregar() {
 		return agregar;
 	}
-
+	/**
+	 * metodo para obtener el check 
+	 * <b> post </b> obtener el genero de un ingeniero
+	 * @return comboGenero es el combo box del ingeniero
+	 */
 	public JComboBox<Character> getComboGenero() {
 		return comboGenero;
 	}
-
+	/**
+	 * metodo para obtener el año del usuario
+	 * <b> post </b> obtener el año de ingreso del usuario
+	 * @return comboAnio obtener el año de ingreso
+	 */
 	public JComboBox<Integer> getComboAnio() {
 		return comboAnio;
 	}
-
+	/**
+	 * metodo para obtener el valor
+	 * <b> post </b> obtener el valor
+	 * @return lblcedula es obtener el valor
+	 */
 	public JTextField getTextField() {
 		return textField;
 	}

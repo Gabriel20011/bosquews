@@ -7,12 +7,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class SalaryWindow extends JFrame{
-	
+	/**
+	 * Ventana donde se puede decir a que clase de ingenieros quiere ir
+	 */
 	private JButton btnveringenieroS;
 	private JButton btnveringenieroJ;
 	private JButton menu;
 	private MainWindow principal;
-	
+	/**
+	 * Metodo constructor para inicializar la vista y obtener las diferentes caracteristicas
+	 */
 	public SalaryWindow(MainWindow principal) {
 		this.principal = principal;
 		setSize(225, 235);

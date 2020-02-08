@@ -11,7 +11,9 @@ import co.edu.unbosque.controller.Controller;
 
 public class MainWindow extends JFrame implements ActionListener {
 
-
+	/**
+	 * Es la ventana pricipal donde se puedn ver todos los tipos de ingeniero que se encuentran
+	 */
 	private JButton btnveringenieros;
 	private Controller controlador;
 	private EngineerWindow pTiposIngenieros;
@@ -20,7 +22,9 @@ public class MainWindow extends JFrame implements ActionListener {
 	private AddEnginerJunior aEnginnerJunior;
 	private AddPersonalComission aPersonalComission;
 	private ListaPersonal listaPersonal;
-	
+	/**
+	 * Metodo constructor donde se inicializa las caracteristicas de la vista
+	 */
 	public MainWindow(Controller controlador) {
 		this.controlador = controlador;
 		intanciarPaneles();
@@ -41,6 +45,10 @@ public class MainWindow extends JFrame implements ActionListener {
 		add(btnveringenieros);
 		btnveringenieros.addActionListener(this);
 	}
+	/**
+	 * Metodo para inicializar los paneles
+	 * <b> post </b> que se creen los paneles
+	 */
 	public void intanciarPaneles() {
 		pTiposIngenieros = new EngineerWindow(this);
 		pSalaryEnginieers = new SalaryWindow(this);
@@ -50,6 +58,10 @@ public class MainWindow extends JFrame implements ActionListener {
 		listaPersonal = new ListaPersonal(this);
 		aPersonalComission = new AddPersonalComission(this);
 	}
+	/**
+	 * Metodo para ocultar los paneles
+	 * <b> post </b> que los paneles ya no se muestren
+	 */
 	public void ocultarPaneles() {
 		pTiposIngenieros.setVisible(false);
 		pSalaryEnginieers.setVisible(false);
@@ -58,9 +70,17 @@ public class MainWindow extends JFrame implements ActionListener {
 		aPersonalComission.setVisible(false);
 		listaPersonal.setVisible(false);
 	}
+	/**
+	 * metodo para obtener el boton
+	 * <b> post </b> dar un valor a el boton
+	 * @return btnveringenieros donde se da una accion para ver ingenieros
+	 */
 	public JButton getBtnveringenieros() {
 		return btnveringenieros;
 	}
+	/**
+	 * Metodo accion performed donde se aplican todas las instrucciones que se le den
+	 */
 	public void actionPerformed(ActionEvent e) {
 		String accion = e.getActionCommand();
 		if (accion == "Ver Ingenieros") {
@@ -151,6 +171,10 @@ public class MainWindow extends JFrame implements ActionListener {
 			aEnginnerJunior.setVisible(true);
 		}
 	}
+	/**
+	 * Metodo para obtener el controlador
+	 * <b> post</b> obtener los metodos del controlador
+	 */
 	public Controller getControlador() {
 		return controlador;
 	}

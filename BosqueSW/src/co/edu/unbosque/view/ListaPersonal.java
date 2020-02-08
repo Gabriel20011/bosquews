@@ -10,13 +10,17 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 
 public class ListaPersonal extends JFrame {
-
+	/**
+	 * Ventana en la cual se puede implementar el metodo CRUD
+	 */
 	private JButton btnAgregar, btnModificar, btnMostrar, btnEliminar, btnMenu;
 	private JList<String> listaNombres;
 	private JScrollPane scrollNombres;
 	private ArrayList<String> nombres;
 	private MainWindow principal;
-
+	/**
+	 * metodo constructor para inicializar caracteristicas de la vista
+	 */
 	public ListaPersonal(MainWindow principal) {
 		this.principal = principal;
 		setSize(600,550);
@@ -28,7 +32,9 @@ public class ListaPersonal extends JFrame {
 		nombres = new ArrayList<String>();
 
 	}
-
+	/**
+	 * Metodo en el cual se iniciliazan los botones
+	 */
 	public void iniciarBotones(String tipoPersonal) {
 		setTitle("Lista de Ingenieros " + tipoPersonal);
 
@@ -95,6 +101,10 @@ public class ListaPersonal extends JFrame {
 		iniciarLista(tipoPersonal);
 
 	}
+	/**
+	 * Metodo en el cual inicializamos la lista y le ingresamos datos
+	 * <b> post </b> inicializar la lista
+	 */
 	private void iniciarLista(String tipoPersonal) {
 		cargarNombres(tipoPersonal);
 		DefaultListModel<String> modelo = new DefaultListModel<String>();
@@ -109,6 +119,10 @@ public class ListaPersonal extends JFrame {
 
 
 	}
+	/**
+	 * Metodo en el cual se cargan que tipo de Ingeniero es
+	 * <b> post </b> mirar de que valor van a ser
+	 */
 	private void cargarNombres(String tipoPersonal) {
 		if (tipoPersonal.equals("Senior")) {
 			for (int i = 0 ; i < principal.getControlador().getM().geteSenior().size() ; i++) {
