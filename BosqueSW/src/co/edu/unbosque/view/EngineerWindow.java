@@ -8,11 +8,17 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class EngineerWindow extends JFrame{
-	
+	/**
+	 * Ventana donde se escoge que tipo de ingeniero se desea elegir
+	 */
 	private JButton btncomision;
 	private JButton btnsalario;
 	private JButton menu;
-	
+	private MainWindow principal;
+	/**
+	 * metodo constructor donde se inicializa la vista
+	 */
+
 	public EngineerWindow(MainWindow principal) {
 				setSize(225, 235);
 		setResizable(false);

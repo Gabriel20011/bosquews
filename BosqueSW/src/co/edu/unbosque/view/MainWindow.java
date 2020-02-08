@@ -13,6 +13,11 @@ import javax.swing.JOptionPane;
 import co.edu.unbosque.controller.Controller;
 import co.edu.unbosque.model.Personal;
 
+import co.edu.unbosque.controller.Controller;
+
+	/**
+	 * Es la ventana pricipal donde se puedn ver todos los tipos de ingeniero que se encuentran
+	 */
 
 public class MainWindow extends JFrame implements ActionListener, WindowListener {
 
@@ -27,6 +32,10 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 	private ShowPersonal informationPersonal;
 	private EditPersonal ePersonal;
 
+	/**
+	 * Metodo constructor donde se inicializa las caracteristicas de la vista
+	 */
+	
 	public MainWindow(Controller controlador) {
 		this.controlador = controlador;
 		intanciarPaneles();
@@ -48,6 +57,10 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 		btnveringenieros.addActionListener(this);
 		addWindowListener(this);
 	}
+	/**
+	 * Metodo para inicializar los paneles
+	 * <b> post </b> que se creen los paneles
+	 */
 	public void intanciarPaneles() {
 		pTiposIngenieros = new EngineerWindow(this);
 		pSalaryEnginieers = new SalaryWindow(this);
@@ -55,12 +68,15 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 		aEnginnerJunior = new AddEnginerJunior(this);
 		aPersonalComission = new AddPersonalComission(this);
 		listaPersonal = new ListaPersonal(this);
+		aPersonalComission = new AddPersonalComission(this);
 		informationPersonal = new ShowPersonal(this);
 		ePersonal = new EditPersonal(this);
-		listaPersonal = new ListaPersonal(this);
-		informationPersonal = new ShowPersonal(this);
 	}
-
+	/**
+	 * Metodo para ocultar los paneles
+	 * <b> post </b> que los paneles ya no se muestren
+	 */
+		
 	public void ocultarPaneles() {
 		pTiposIngenieros.setVisible(false);
 		pSalaryEnginieers.setVisible(false);
@@ -70,9 +86,17 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 		informationPersonal.setVisible(false);
 		ePersonal.setVisible(false);
 	}
+	/**
+	 * metodo para obtener el boton
+	 * <b> post </b> dar un valor a el boton
+	 * @return btnveringenieros donde se da una accion para ver ingenieros
+	 */
 	public JButton getBtnveringenieros() {
 		return btnveringenieros;
 	}
+	/**
+	 * Metodo accion performed donde se aplican todas las instrucciones que se le den
+	 */
 	public void actionPerformed(ActionEvent e) {
 		String accion = e.getActionCommand();
 		if (accion == "Ver Ingenieros") {
@@ -322,6 +346,10 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 			ePersonal.getTxttelefono().setText(pe.getTelefono());
 		}
 	}
+	/**
+	 * Metodo para obtener el controlador
+	 * <b> post</b> obtener los metodos del controlador
+	 */
 	public Controller getControlador() {
 		return controlador;
 	}

@@ -6,11 +6,16 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-
+/**
+ * Ventana para obtener los ingenieros que tienen comision y salario
+ *
+ */
 public class PersonSalaryWindow extends JFrame {
 	public JButton btncomision;
 	public JButton btnsalario;
-	
+		/**
+		 * metodo constructor donde se inicializa toda la vista
+		 */
 		public PersonSalaryWindow(MainWindow principal) {
 		
 		setSize(400,500);
