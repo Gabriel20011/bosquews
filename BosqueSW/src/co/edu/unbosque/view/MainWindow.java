@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import co.edu.unbosque.controller.Controller;
+import co.edu.unbosque.model.Personal;
 
 public class MainWindow extends JFrame implements ActionListener {
 
@@ -19,6 +20,7 @@ public class MainWindow extends JFrame implements ActionListener {
 	private AddEnginerJunior aEnginnerJunior;
 	private AddPersonalComission aPersonalComission;
 	private ListaPersonal listaPersonal;
+	private EditPersonal ePersonal;
 	
 	public MainWindow(Controller controlador) {
 		this.controlador = controlador;
@@ -48,6 +50,7 @@ public class MainWindow extends JFrame implements ActionListener {
 		aPersonalComission = new AddPersonalComission(this);
 		listaPersonal = new ListaPersonal(this);
 		aPersonalComission = new AddPersonalComission(this);
+		ePersonal = new EditPersonal(this);
 	}
 	public void ocultarPaneles() {
 		pTiposIngenieros.setVisible(false);
@@ -158,6 +161,17 @@ public class MainWindow extends JFrame implements ActionListener {
 		if (accion == "AgregarJunior") {
 			listaPersonal.setVisible(false);
 			aEnginnerJunior.setVisible(true);
+		}
+		if(accion == "modificar") {
+			ePersonal.setVisible(true);
+			listaPersonal.setVisible(false);
+			Personal pe = controlador.buscar(listaPersonal.getListaNombres().getSelectedValue());
+			ePersonal.getTxtnombre().setText(pe.getNombre());
+			ePersonal.getTxtapellido().setText(pe.getApellido());
+			ePersonal.getTxtcorreo().setText(pe.getCorreo());
+			ePersonal.getTxtdireccion().setText(pe.getDireccion());
+			ePersonal.getTxttelefono().setText(pe.getTelefono());
+			
 		}
 	}
 	public Controller getControlador() {

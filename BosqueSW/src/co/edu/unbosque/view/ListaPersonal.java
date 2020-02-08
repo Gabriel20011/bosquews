@@ -132,4 +132,12 @@ public class ListaPersonal extends JFrame {
 			}
 		}
 	}
+
+	public JList<String> getListaNombres() {
+		return listaNombres;
+	}
+
+	public void setListaNombres(JList<String> listaNombres) {
+		this.listaNombres = listaNombres;
+	}
 }

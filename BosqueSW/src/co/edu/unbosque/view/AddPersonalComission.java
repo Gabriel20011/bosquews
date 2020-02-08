@@ -98,7 +98,7 @@ public class AddPersonalComission extends JFrame {
 		lblanio.setBounds(45,226,110,19);
 		add(lblanio);
 
-		lblventa = new JLabel("Ingrerso por venta");
+		lblventa = new JLabel("Ingreso por venta");
 		lblventa.setBounds(45,330,110,25);
 		add(lblventa);
 
