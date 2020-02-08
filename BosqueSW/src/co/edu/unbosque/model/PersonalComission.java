@@ -36,6 +36,7 @@ public class PersonalComission extends Personal implements Serializable{
 			double salarioBase, String correo, String direccion, int anio, double venta) {
 		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
 		this.venta = venta;
+		calcularSalario();
 		// TODO Auto-generated constructor stub
 	}
 

@@ -1,16 +1,9 @@
 package co.edu.unbosque.view;
-
 import java.awt.Color;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JTextField;
 
 public class AddEnginerJunior extends JFrame  {
@@ -23,6 +16,7 @@ public class AddEnginerJunior extends JFrame  {
 	private JLabel lbldireccion;
 	private JLabel lblanio;
 	private JLabel lblnivel;
+	private JLabel lbltelefono;
 	private JTextField txtcedula;
 	private JTextField txtnombre;
 	private JTextField txtapellido;
@@ -30,7 +24,7 @@ public class AddEnginerJunior extends JFrame  {
 	private JTextField txttelefono;
 	private JTextField txtdireccion;
 	private JComboBox<Integer> comboAnio;
-	private JButton agregar;
+	private JButton agregar, menu;
 	private JComboBox<Character> comboGenero;
 	private JComboBox<Integer> comboNivel;
 
@@ -78,7 +72,7 @@ public class AddEnginerJunior extends JFrame  {
 		comboGenero.setBounds(290, 130, 285, 22);
 		add(comboGenero);
 
-		lblcorreo = new JLabel("Telefono");
+		lblcorreo = new JLabel("Correo");
 		lblcorreo.setBounds(45,160,110,20);
 		add(lblcorreo);
 
@@ -89,9 +83,14 @@ public class AddEnginerJunior extends JFrame  {
 		lbldireccion = new JLabel("Direccion");
 		lbldireccion.setBounds(45,190,110,20);
 		add(lbldireccion);
+		
+		menu = new JButton("Menu");
+		menu.addActionListener(principal);
+		menu.setBounds(355, 400, 200, 60);
+		add(menu);
 
 		txtdireccion = new JTextField();
-		txtdireccion.setBounds(290,192,285,20);
+		txtdireccion.setBounds(290,190,285,20);
 		add(txtdireccion);
 
 		lblanio = new JLabel("Anio");
@@ -103,11 +102,16 @@ public class AddEnginerJunior extends JFrame  {
 		add(lblnivel);
 
 		agregar = new  JButton("AGREGAR");
-		agregar.setBounds(125,400,290,60);
+		agregar.setBounds(25,400,200,60);
 		agregar.setActionCommand("agregar Junior");
 		add(agregar);
 		
+		lbltelefono = new JLabel("Telefono");
+		lbltelefono.setBounds(25, 278, 285, 20);
+		add(lbltelefono);
+		
 		txttelefono = new JTextField();
+		txttelefono.setBounds(290, 278, 285, 20);
 		add(txttelefono);
 
 		comboAnio = new JComboBox<Integer>();
