@@ -37,7 +37,7 @@ public class EngineerSeniorWimdow extends JFrame implements ActionListener {
 	JTextField txtnventas;
 	
 	JButton agregar;
-	private JTextField textField;
+	private JTextField txtnombre;
 	
 	public EngineerSeniorWimdow() {
 		setTitle("Engineer");
@@ -45,12 +45,13 @@ public class EngineerSeniorWimdow extends JFrame implements ActionListener {
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		getContentPane().setBackground(Color.LIGHT_GRAY);
+		getContentPane().setBackground(new Color(240,235,190));
 		getContentPane().setLayout(null);
 		
 		
 		lblcedula = new JLabel("Cedula");
 		lblcedula.setBounds(45,15,155,25);
+		lblcedula.setForeground(new Color(50, 30, 24));
 		getContentPane().add(lblcedula);
 		
 		txtcedula = new JTextField();
@@ -59,10 +60,12 @@ public class EngineerSeniorWimdow extends JFrame implements ActionListener {
 		
 		lblnombre = new JLabel("Nombre");
 		lblnombre.setBounds(45,50,170,25);
+		lblnombre.setForeground(new Color(50, 30, 24));
 		getContentPane().add(lblnombre);
 		
 		lblapellidos = new JLabel("Apellidos");
 		lblapellidos.setBounds(45,90,170,25);
+		lblapellidos.setForeground(new Color(50, 30, 24));
 		getContentPane().add(lblapellidos);
 		
 		txtapellidos = new JTextField();
@@ -71,14 +74,16 @@ public class EngineerSeniorWimdow extends JFrame implements ActionListener {
 		
 		lblgenero = new JLabel("Genero");
 		lblgenero.setBounds(45,130,155,25);
+		lblgenero.setForeground(new Color(50, 30, 24));
 		getContentPane().add(lblgenero);
 		
 		chechgenero = new JCheckBox();
 		chechgenero.setBounds(290,130,25,25);
 		getContentPane().add(chechgenero);
 		
-		lblcorreo = new JLabel("Telefono");
+		lblcorreo = new JLabel("Correo");
 		lblcorreo.setBounds(45,160,110,20);
+		lblcorreo.setForeground(new Color(50, 30, 24));
 		getContentPane().add(lblcorreo);
 		
 		txtcorreo = new JTextField();
@@ -87,6 +92,7 @@ public class EngineerSeniorWimdow extends JFrame implements ActionListener {
 		
 		lbldireccion = new JLabel("Direccion");
 		lbldireccion.setBounds(45,190,110,20);
+		lbldireccion.setForeground(new Color(50, 30, 24));
 		getContentPane().add(lbldireccion);
 		
 		txtdireccion = new JTextField();
@@ -95,10 +101,12 @@ public class EngineerSeniorWimdow extends JFrame implements ActionListener {
 		
 		lblanio = new JLabel("Anio");
 		lblanio.setBounds(45,226,110,19);
+		lblanio.setForeground(new Color(50, 30, 24));
 		getContentPane().add(lblanio);
 		
 		lblsalario = new JLabel("Salario");
 		lblsalario.setBounds(45,260,110,25);
+		lblsalario.setForeground(new Color(50, 30, 24));
 		getContentPane().add(lblsalario);
 		
 		txtsalario = new JTextField();
@@ -107,6 +115,7 @@ public class EngineerSeniorWimdow extends JFrame implements ActionListener {
 		
 		lblclientes = new JLabel("Numero de clientes");
 		lblclientes.setBounds(45,300,110,20);
+		lblclientes.setForeground(new Color(50, 30, 24));
 		getContentPane().add(lblclientes);
 		
 		txtclientes = new JTextField();
@@ -115,6 +124,7 @@ public class EngineerSeniorWimdow extends JFrame implements ActionListener {
 		
 		lblnventas = new JLabel("Numero de ventas");
 		lblnventas.setBounds(45,330,110,25);
+		lblnventas.setForeground(new Color(50, 30, 24));
 		getContentPane().add(lblnventas);
 		
 		txtnventas = new JTextField();
@@ -123,11 +133,13 @@ public class EngineerSeniorWimdow extends JFrame implements ActionListener {
 		
 		agregar = new  JButton("AGREGAR");
 		agregar.setBounds(125,400,290,60);
+		agregar.setForeground(new Color(240,235,190));
+		agregar.setBackground(new Color(50, 30, 24));
 		getContentPane().add(agregar);
 		
-		textField = new JTextField();
-		textField.setBounds(290, 50, 285, 25);
-		getContentPane().add(textField);
+		txtnombre = new JTextField();
+		txtnombre.setBounds(290, 50, 285, 25);
+		getContentPane().add(txtnombre);
 		
 		JComboBox<Integer> comboAnio = new JComboBox<Integer>();
 		int aux=2020;
