@@ -164,4 +164,5 @@ public class AddPersonalComission extends JFrame {
 	public void setTxtventa(JTextField txtventa) {
 		this.txtventa = txtventa;
 	}
+	
 }

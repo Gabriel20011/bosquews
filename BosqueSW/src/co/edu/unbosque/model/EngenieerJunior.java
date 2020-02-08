@@ -4,10 +4,7 @@ import java.io.Serializable;
 
 public class EngenieerJunior extends PersonalSalary implements Serializable {
 	
-	/**
-	 * 
-	 */
-
+	
 	private int level;
 
 	public EngenieerJunior(String cedula, String nombre, String apellido, char genero, String telefono,

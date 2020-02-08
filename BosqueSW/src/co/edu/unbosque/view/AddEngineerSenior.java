@@ -34,9 +34,9 @@ public class AddEngineerSenior extends JFrame {
 	private JButton agregar;	
 	private JComboBox<Character> comboGenero;
 	private JComboBox<Integer> comboAnio;
-	private JTextField textField;
 
-	public AddEngineerSenior(MainWindow principal) {
+	public AddEngineerSenior(MainWindow principal) 
+	{ 
 		setTitle("Nuevo Ingeniero Senior");
 		setSize(600,500);
 		setResizable(false);
@@ -56,6 +56,10 @@ public class AddEngineerSenior extends JFrame {
 		lblnombre = new JLabel("Nombre");
 		lblnombre.setBounds(45,50,170,25);
 		add(lblnombre);
+		
+		txtnombre = new JTextField();
+		txtnombre.setBounds(290, 50, 285, 25);
+		add(txtnombre);
 
 		lblapellido = new JLabel("Apellidos");
 		lblapellido.setBounds(45,90,170,25);
@@ -108,9 +112,6 @@ public class AddEngineerSenior extends JFrame {
 		agregar.setActionCommand("agregar Senior");
 		add(agregar);
 
-		textField = new JTextField();
-		textField.setBounds(290, 50, 285, 25);
-		add(textField);
 		
 		txttelefono = new JTextField();
 		add(txttelefono);
