@@ -131,13 +131,6 @@ public class ShowPersonal extends JFrame {
 		menu.setBounds(355, 400, 200, 60);
 		add(menu);
 
-		lblanio = new JLabel("Anio");
-		lblanio.setBounds(45,226,110,19);
-		add(lblanio);
-		
-		txtanio = new JLabel(Integer.toString(personal.getAnio()));
-		txtanio.setBounds(290,226,110,19);
-		add(txtanio);
 	
 	}
 
