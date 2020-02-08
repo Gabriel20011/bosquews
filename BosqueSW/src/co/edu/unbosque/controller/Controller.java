@@ -10,6 +10,7 @@ public class Controller {
 
 	public Controller() {
 		m = new Mundo();
+		agregarComission("1019152187", "Juan", "Quintero", 'M', "321223755", 0, "Juandavidquinter@hotmail.com", "Calle 152", 2017, 4);
 		ventana = new MainWindow(this);
 		ventana.setVisible(true);
 		
@@ -20,6 +21,7 @@ public class Controller {
 		if(buscar(cedula)==null) {
 			m.getpComission().add(pc);
 		}
+		System.out.println("Agregado !");
 	}
 	public void agregarSenior(String cedula, String nombre, String apellido, char genero, String telefono,
 			double salarioBase, String correo, String direccion, int anio, int nventas) {
@@ -27,6 +29,7 @@ public class Controller {
 		if(buscar(cedula)==null) {
 			m.geteSenior().add(es);
 		}
+		System.out.println("Agregado !");
 	}
 	public void agregarJunior(String cedula, String nombre, String apellido, char genero, String telefono,
 			double salarioBase, String correo, String direccion, int anio, int level) {
@@ -34,6 +37,7 @@ public class Controller {
 		if(buscar(cedula)==null) {
 			m.geteJunior().add(ej);
 		}
+		System.out.println("Agregado !");
 	}
 	public void modificar(String cedula, String nombre, String apellido, String telefono, String correo, String direccion) {
 		Personal per = buscar(cedula);

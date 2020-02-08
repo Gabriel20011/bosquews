@@ -30,7 +30,7 @@ public class AddEnginerJunior extends JFrame  {
 	private JTextField txttelefono;
 	private JTextField txtdireccion;
 	private JComboBox<Integer> comboAnio;
-	private JButton agregar;
+	private JButton agregar, menu;
 	private JComboBox<Character> comboGenero;
 	private JComboBox<Integer> comboNivel;
 
@@ -78,7 +78,7 @@ public class AddEnginerJunior extends JFrame  {
 		comboGenero.setBounds(290, 130, 285, 22);
 		add(comboGenero);
 
-		lblcorreo = new JLabel("Telefono");
+		lblcorreo = new JLabel("Correo");
 		lblcorreo.setBounds(45,160,110,20);
 		add(lblcorreo);
 
@@ -89,6 +89,11 @@ public class AddEnginerJunior extends JFrame  {
 		lbldireccion = new JLabel("Direccion");
 		lbldireccion.setBounds(45,190,110,20);
 		add(lbldireccion);
+		
+		menu = new JButton("Menu");
+		menu.addActionListener(principal);
+		menu.setBounds(355, 400, 200, 60);
+		add(menu);
 
 		txtdireccion = new JTextField();
 		txtdireccion.setBounds(290,192,285,20);
@@ -103,9 +108,11 @@ public class AddEnginerJunior extends JFrame  {
 		add(lblnivel);
 
 		agregar = new  JButton("AGREGAR");
-		agregar.setBounds(125,400,290,60);
+		agregar.setBounds(25,400,200,60);
 		agregar.setActionCommand("agregar Junior");
 		add(agregar);
+		
+		lbl
 		
 		txttelefono = new JTextField();
 		add(txttelefono);

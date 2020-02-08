@@ -19,7 +19,8 @@ public class MainWindow extends JFrame implements ActionListener {
 	private AddEngineerSenior aEngineerSenior;
 	private AddEnginerJunior aEnginnerJunior;
 	private AddPersonalComission aPersonalComission;
-
+	private ListaPersonal listaPersonal;
+	
 	public MainWindow(Controller controlador) {
 		this.controlador = controlador;
 		intanciarPaneles();
@@ -46,10 +47,16 @@ public class MainWindow extends JFrame implements ActionListener {
 		aEngineerSenior = new AddEngineerSenior(this);
 		aEnginnerJunior = new AddEnginerJunior(this);
 		aPersonalComission = new AddPersonalComission(this);
+		listaPersonal = new ListaPersonal(this);
+		aPersonalComission = new AddPersonalComission(this);
 	}
 	public void ocultarPaneles() {
 		pTiposIngenieros.setVisible(false);
 		pSalaryEnginieers.setVisible(false);
+		aEngineerSenior.setVisible(false);
+		aEnginnerJunior.setVisible(false);
+		aPersonalComission.setVisible(false);
+		listaPersonal.setVisible(false);
 	}
 	public JButton getBtnveringenieros() {
 		return btnveringenieros;
@@ -66,18 +73,22 @@ public class MainWindow extends JFrame implements ActionListener {
 		}
 		if (accion == "Ingeniero por Comision") {
 			pTiposIngenieros.setVisible(false);
+			listaPersonal.iniciarBotones("Comission");
+			listaPersonal.setVisible(true);
 		}
 		if (accion == "Ingeniero por Salario") {
 			pTiposIngenieros.setVisible(false);
 			pSalaryEnginieers.setVisible(true);
 		}
 		if( accion == "Ingenieros Senior") {
-			pTiposIngenieros.setVisible(false);
-			aEngineerSenior.setVisible(true);
+			pSalaryEnginieers.setVisible(false);
+			listaPersonal.iniciarBotones("Senior");
+			listaPersonal.setVisible(true);
 		}
 		if(accion == "Ingenieros Junior") {
-			pTiposIngenieros.setVisible(false);
-			aEnginnerJunior.setVisible(true);
+			pSalaryEnginieers.setVisible(false);
+			listaPersonal.iniciarBotones("Junior");
+			listaPersonal.setVisible(true);
 		}
 		if(accion == "agregar Senior") {
 			if(aEngineerSenior.getTxtnombre().getText().length()!=0 && aEngineerSenior.getTxtapellido().getText().length()!=0 
@@ -127,5 +138,22 @@ public class MainWindow extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(null, "POR FAVOR INGRESE BIEN LOS DATOS");
 			}
 		}
+		if (accion == "AgregarComission") {
+			listaPersonal.setVisible(false);
+			aPersonalComission.setVisible(true);
+		}
+		if (accion == "AgregarSenior") {
+			listaPersonal.setVisible(false);
+			aEngineerSenior.setVisible(true);
+		}
+		if (accion == "AgregarJunior") {
+			listaPersonal.setVisible(false);
+			aEnginnerJunior.setVisible(true);
+		}
 	}
+	public Controller getControlador() {
+		return controlador;
+	}
+	
+	
 }

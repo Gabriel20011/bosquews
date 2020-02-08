@@ -30,7 +30,7 @@ public class AddPersonalComission extends JFrame {
 	private JTextField txtdireccion;
 	private JComboBox<Character> comboGenero;
 	private JComboBox<Integer> comboAnio;
-	JButton agregar;
+	private JButton agregar;
 	
 	public AddPersonalComission(MainWindow principal) {
 		setTitle("");
