@@ -19,7 +19,8 @@ public class MainWindow extends JFrame implements ActionListener {
 	private AddEnginerJunior aEnginnerJunior;
 	private AddPersonalComission aPersonalComission;
 	private ListaPersonal listaPersonal;
-	
+	private ShowPersonal informationPersonal;
+
 	public MainWindow(Controller controlador) {
 		this.controlador = controlador;
 		intanciarPaneles();
@@ -48,6 +49,7 @@ public class MainWindow extends JFrame implements ActionListener {
 		aPersonalComission = new AddPersonalComission(this);
 		aPersonalComission = new AddPersonalComission(this);
 		listaPersonal = new ListaPersonal(this);
+		informationPersonal = new ShowPersonal(this);
 	}
 	public void ocultarPaneles() {
 		pTiposIngenieros.setVisible(false);
@@ -95,19 +97,28 @@ public class MainWindow extends JFrame implements ActionListener {
 		if(accion == "agregar Senior") {
 			if(aEngineerSenior.getTxtnombre().getText().length()!=0 && aEngineerSenior.getTxtapellido().getText().length()!=0 
 					&& aEngineerSenior.getTxtcedula().getText().length()!=0 && aEngineerSenior.getTxtcorreo().getText().length()!=0
-					&& aEngineerSenior.getTxtdireccion().getText().length()!=0 && aEngineerSenior.getTxtnventas().getText().length()!=0) {
+					&& aEngineerSenior.getTxtdireccion().getText().length()!=0 && aEngineerSenior.getTxtnventas().getText().length()!=0
+					&& aEngineerSenior.getTxtcedula().getText().matches("[0-9]+") && aEngineerSenior.getTxtapellido().getText().matches("[a-zA-Z]+")
+					&& aEngineerSenior.getTxtnombre().getText().matches("[a-zA-Z]+") && aEngineerSenior.getTxtnventas().getText().matches("[0-9]+")) {
 
 				int anio = (int) aEngineerSenior.getComboAnio().getSelectedItem();
 				char genero = (char) aEngineerSenior.getComboGenero().getSelectedIndex();
-				controlador.agregarSenior(aEngineerSenior.getTxtcedula().getText(), aEngineerSenior.getTxtnombre().getText(),
+				if (controlador.agregarSenior(aEngineerSenior.getTxtcedula().getText(), aEngineerSenior.getTxtnombre().getText(),
 						aEngineerSenior.getTxtapellido().getText(), genero, aEngineerSenior.getTxttelefono().getText(),
 						0, aEngineerSenior.getTxtcorreo().getText(), aEngineerSenior.getTxtdireccion().getText(),
-						anio, Integer.parseInt(aEngineerSenior.getTxtnventas().getText()));
+						anio, Integer.parseInt(aEngineerSenior.getTxtnventas().getText()))) {
+					controlador.converger();
+					aEngineerSenior.setVisible(false);
+					listaPersonal = new ListaPersonal(this);
+					listaPersonal.iniciarBotones("Senior");
+					listaPersonal.setVisible(true);
+
+				}
 
 				aEngineerSenior.setVisible(false);
 				listaPersonal.setVisible(true);
 				controlador.converger();
-				
+
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "POR FAVOR INGRESE BIEN LOS DATOS");
@@ -117,18 +128,27 @@ public class MainWindow extends JFrame implements ActionListener {
 			if(aEnginnerJunior.getTxtnombre().getText().length()!=0 && aEnginnerJunior.getTxtapellido().getText().length()!=0 
 					&& aEnginnerJunior.getTxtcedula().getText().length()!=0 && aEnginnerJunior.getTxtcorreo().getText().length()!=0
 					&& aEnginnerJunior.getTxtdireccion().getText().length()!=0 && aEnginnerJunior.getTxtcedula().getText().matches("[0-9]+") 
-					&& aEnginnerJunior.getTxtapellido().getText().contains("[a-zA-Z]+") && aEnginnerJunior.getTxtnombre().getText().contains("[a-zA-Z]+")) {
+					&& aEnginnerJunior.getTxtapellido().getText().matches("[a-zA-Z]+") && aEnginnerJunior.getTxtnombre().getText().matches("[a-zA-Z]+")) {
 
 				int anio = (int) aEnginnerJunior.getComboAnio().getSelectedItem();
 				char genero = (char) aEnginnerJunior.getComboGenero().getSelectedIndex();
 				int level = (int) aEnginnerJunior.getComboNivel().getSelectedItem();
-				controlador.agregarJunior(aEnginnerJunior.getTxtcedula().getText(), aEnginnerJunior.getTxtnombre().getText(),
+				if (controlador.agregarJunior(aEnginnerJunior.getTxtcedula().getText(), aEnginnerJunior.getTxtnombre().getText(),
 						aEnginnerJunior.getTxtapellido().getText(), genero, aEnginnerJunior.getTxttelefono().getText(),0, aEnginnerJunior.getTxtcorreo().getText(),
-						aEnginnerJunior.getTxtdireccion().getText(), anio, level);
+						aEnginnerJunior.getTxtdireccion().getText(), anio, level)) {
+					controlador.converger();
+					aEnginnerJunior.setVisible(false);
+					listaPersonal = new ListaPersonal(this);
+					listaPersonal.iniciarBotones("Junior");
+					listaPersonal.setVisible(true);
 
-				controlador.converger();
-				aEnginnerJunior.setVisible(false);
-				listaPersonal.setVisible(true);
+				}
+				aEnginnerJunior.getTxtapellido().setText("");
+				aEnginnerJunior.getTxtnombre().setText("");
+				aEnginnerJunior.getTxtcedula().setText("");
+				aEnginnerJunior.getTxtdireccion().setText("");
+				aEnginnerJunior.getTxtcorreo().setText("");
+				aEnginnerJunior.getTxttelefono().setText("");
 			}else {
 				JOptionPane.showMessageDialog(null, "POR FAVOR INGRESE BIEN LOS DATOS");
 			}
@@ -136,13 +156,20 @@ public class MainWindow extends JFrame implements ActionListener {
 		if(accion == "agregar Comission") {
 			if(aPersonalComission.getTxtnombre().getText().length()!=0 && aPersonalComission.getTxtapellido().getText().length()!=0 
 					&& aPersonalComission.getTxtcedula().getText().length()!=0 && aPersonalComission.getTxtcorreo().getText().length()!=0
-					&& aPersonalComission.getTxtdireccion().getText().length()!=0 && 
-					 aPersonalComission.getTxtventa().getText().length()!=0) {
+					&& aPersonalComission.getTxtdireccion().getText().length()!=0 && aPersonalComission.getTxtventa().getText().length()!=0
+					&& aPersonalComission.getTxtcedula().getText().matches("[0-9]+") && aPersonalComission.getTxtapellido().getText().matches("[a-zA-Z]+")
+					&& aPersonalComission.getTxtnombre().getText().matches("[a-zA-Z]+") && aPersonalComission.getTxtventa().getText().matches("[0-9]+")) {
 				int anio = (int) aPersonalComission.getComboAnio().getSelectedItem();
 				char genero = (char) aPersonalComission.getComboGenero().getSelectedIndex();
-				controlador.agregarComission(aPersonalComission.getTxtcedula().getText(), aPersonalComission.getTxtnombre().getText(), aPersonalComission.getTxtapellido().getText(),
+				if (controlador.agregarComission(aPersonalComission.getTxtcedula().getText(), aPersonalComission.getTxtnombre().getText(), aPersonalComission.getTxtapellido().getText(),
 						genero, aPersonalComission.getTxttelefono().getText(), 0, aPersonalComission.getTxtcorreo().getText(), aPersonalComission.getTxtdireccion().getText(),
-						anio, Double.parseDouble(aPersonalComission.getTxtventa().getText()));
+						anio, Double.parseDouble(aPersonalComission.getTxtventa().getText()))) {
+					controlador.converger();
+					aPersonalComission.setVisible(false);
+					listaPersonal = new ListaPersonal(this);
+					listaPersonal.iniciarBotones("Comission");
+					listaPersonal.setVisible(true);
+				}
 				aPersonalComission.getTxtapellido().setText("");
 				aPersonalComission.getTxtnombre().setText("");
 				aPersonalComission.getTxtcedula().setText("");
@@ -165,6 +192,11 @@ public class MainWindow extends JFrame implements ActionListener {
 		if (accion == "AgregarJunior") {
 			listaPersonal.setVisible(false);
 			aEnginnerJunior.setVisible(true);
+		}
+		if (accion == "Mostrar") {
+			informationPersonal.cargarInformacion(controlador.buscar(listaPersonal.getListaCedula().getSelectedValue()));
+			informationPersonal.setVisible(true);
+			
 		}
 	}
 	public Controller getControlador() {

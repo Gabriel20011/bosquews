@@ -12,8 +12,8 @@ import javax.swing.JScrollPane;
 public class ListaPersonal extends JFrame {
 
 	private JButton btnAgregar, btnModificar, btnMostrar, btnEliminar, btnMenu;
-	private JList<String> listaNombres;
-	private JScrollPane scrollNombres;
+	private JList<String> listaCedula;
+	private JScrollPane scrollCedula;
 	private ArrayList<String> nombres;
 	private MainWindow principal;
 
@@ -77,20 +77,18 @@ public class ListaPersonal extends JFrame {
 			btnAgregar.setActionCommand("AgregarSenior");
 			btnModificar.setActionCommand("ModificarSenior");
 			btnEliminar.setActionCommand("EliminarSenior");
-			btnModificar.setActionCommand("ModificarSenior");
 		}
 		if (tipoPersonal.equals("Junior")) {
 			btnAgregar.setActionCommand("AgregarJunior");
 			btnModificar.setActionCommand("ModificarJunior");
 			btnEliminar.setActionCommand("EliminarJunior");
-			btnModificar.setActionCommand("ModificarJunior");
 		}
 		if (tipoPersonal.equals("Comission")) {
 			btnAgregar.setActionCommand("AgregarComission");
 			btnModificar.setActionCommand("ModificarComission");
 			btnEliminar.setActionCommand("EliminarComission");
-			btnModificar.setActionCommand("ModificarComission");
 		}
+		btnModificar.setActionCommand("Modificar");
 
 		iniciarLista(tipoPersonal);
 
@@ -102,17 +100,17 @@ public class ListaPersonal extends JFrame {
 			modelo.addElement(nombres.get(i));
 		}
 
-		listaNombres = new JList<String>(modelo);
-		scrollNombres = new JScrollPane(listaNombres);
-		scrollNombres.setBounds(10, 10, 250, 500);
-		add(scrollNombres);
+		listaCedula = new JList<String>(modelo);
+		scrollCedula = new JScrollPane(listaCedula);
+		scrollCedula.setBounds(10, 10, 250, 500);
+		add(scrollCedula);
 
 	}
 	private void cargarNombres(String tipoPersonal) {
 		if (tipoPersonal.equals("Senior")) {
 			System.out.println(principal.getControlador().getM().geteSenior().size());
 			for (int i = 0 ; i < principal.getControlador().getM().geteSenior().size() ; i++) {
-				nombres.add(principal.getControlador().getM().geteSenior().get(i).getNombre());
+				nombres.add(principal.getControlador().getM().geteSenior().get(i).getCedula());
 			}
 
 		}
@@ -120,7 +118,7 @@ public class ListaPersonal extends JFrame {
 
 			System.out.println(principal.getControlador().getM().geteJunior().size());
 			for (int i = 0 ; i < principal.getControlador().getM().geteJunior().size() ; i++) {
-				nombres.add(principal.getControlador().getM().geteJunior().get(i).getNombre());
+				nombres.add(principal.getControlador().getM().geteJunior().get(i).getCedula());
 			}
 
 		}
@@ -128,8 +126,13 @@ public class ListaPersonal extends JFrame {
 
 			System.out.println(principal.getControlador().getM().getpComission().size());
 			for (int i = 0 ; i < principal.getControlador().getM().getpComission().size() ; i++) {
-				nombres.add(principal.getControlador().getM().getpComission().get(i).getNombre());
+				nombres.add(principal.getControlador().getM().getpComission().get(i).getCedula());
 			}
 		}
 	}
+
+	public JList<String> getListaCedula() {
+		return listaCedula;
+	}
+	
 }
