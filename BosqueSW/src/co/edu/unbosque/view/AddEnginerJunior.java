@@ -23,6 +23,7 @@ public class AddEnginerJunior extends JFrame  {
 	private JLabel lbldireccion;
 	private JLabel lblanio;
 	private JLabel lblnivel;
+	
 	private JTextField txtcedula;
 	private JTextField txtnombre;
 	private JTextField txtapellido;
