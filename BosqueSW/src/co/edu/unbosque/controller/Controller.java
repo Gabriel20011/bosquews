@@ -137,6 +137,15 @@ public class Controller {
 			m.getPersonal().add(m.geteSenior().get(i));
 		}
 	}
+	public boolean verificarCorreo(String correo) {
+		char[] a = correo.toCharArray();
+		for (int i = 0; i < a.length; i++) {
+			if(a[i]=='@') {
+				return true;
+			}
+		}
+		return false;
+	}
 	public Mundo getM() {
 		return m;
 	}

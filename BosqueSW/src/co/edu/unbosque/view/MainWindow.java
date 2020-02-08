@@ -161,7 +161,7 @@ public class MainWindow extends JFrame implements ActionListener {
 					&& aPersonalComission.getTxtdireccion().getText().length()!=0 && aPersonalComission.getTxtventa().getText().length()!=0
 					&& aPersonalComission.getTxtcedula().getText().matches("[0-9]+") && aPersonalComission.getTxtapellido().getText().matches("[a-zA-Z]+")
 					&& aPersonalComission.getTxtnombre().getText().matches("[a-zA-Z]+") && aPersonalComission.getTxtventa().getText().matches("[0-9]+")
-					&& aPersonalComission.getTxttelefono().getText().matches("[0-9]+")) {
+					&& aPersonalComission.getTxttelefono().getText().matches("[0-9]+") && controlador.verificarCorreo(aPersonalComission.getTxtcorreo().getText())) {
 				int anio = (int) aPersonalComission.getComboAnio().getSelectedItem();
 				char genero = (char) aPersonalComission.getComboGenero().getSelectedIndex();
 				if (controlador.agregarComission(aPersonalComission.getTxtcedula().getText(), aPersonalComission.getTxtnombre().getText(), aPersonalComission.getTxtapellido().getText(),
@@ -219,6 +219,7 @@ public class MainWindow extends JFrame implements ActionListener {
 		if(accion == "EliminarComission") {
 			if(controlador.eliminar(listaPersonal.getListaCedula().getSelectedValue())) {
 				JOptionPane.showMessageDialog(null, "SE HA ELIMINADO");
+				listaPersonal.setVisible(false);
 				listaPersonal = new ListaPersonal(this);
 				listaPersonal.iniciarBotones("Comission");
 				listaPersonal.setVisible(true);
@@ -230,6 +231,7 @@ public class MainWindow extends JFrame implements ActionListener {
 			if(accion == "EliminarJunior") {
 				if(controlador.eliminar(listaPersonal.getListaCedula().getSelectedValue())) {
 					JOptionPane.showMessageDialog(null, "SE HA ELIMINADO");
+					listaPersonal.setVisible(false);
 					listaPersonal = new ListaPersonal(this);
 					listaPersonal.iniciarBotones("Junior");
 					listaPersonal.setVisible(true);
@@ -241,6 +243,7 @@ public class MainWindow extends JFrame implements ActionListener {
 				if(accion == "EliminarSenior") {
 					if(controlador.eliminar(listaPersonal.getListaCedula().getSelectedValue())) {
 						JOptionPane.showMessageDialog(null, "SE HA ELIMINADO");
+						listaPersonal.setVisible(false);
 						listaPersonal = new ListaPersonal(this);
 						listaPersonal.iniciarBotones("Senior");
 						listaPersonal.setVisible(true);
