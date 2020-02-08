@@ -81,6 +81,13 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 			ocultarPaneles();
 			listaPersonal.setVisible(false);
 			setVisible(true);
+			
+			informationPersonal.getTxtapellido().setText("");
+			informationPersonal.getTxtnombre().setText("");
+			informationPersonal.getTxtcedula().setText("");
+			informationPersonal.getTxtdireccion().setText("");
+			informationPersonal.getTxtcorreo().setText("");
+			informationPersonal.getTxttelefono().setText("");
 		}
 		if (accion == "Ingeniero por Comision") {
 			listaPersonal = new ListaPersonal(this);
