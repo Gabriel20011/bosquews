@@ -1,16 +1,9 @@
 package co.edu.unbosque.view;
-
 import java.awt.Color;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JTextField;
 /**
  * Clase para agregar un ingeniero Junior
@@ -27,7 +20,7 @@ public class AddEnginerJunior extends JFrame  {
 	private JLabel lbldireccion;
 	private JLabel lblanio;
 	private JLabel lblnivel;
-	
+	private JLabel lbltelefono;
 	private JTextField txtcedula;
 	private JTextField txtnombre;
 	private JTextField txtapellido;
@@ -50,6 +43,7 @@ public class AddEnginerJunior extends JFrame  {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
+		addWindowListener(principal);
 
 		lblcedula = new JLabel("Cedula");
 		lblcedula.setBounds(45,15,155,25);
@@ -103,7 +97,7 @@ public class AddEnginerJunior extends JFrame  {
 		add(menu);
 
 		txtdireccion = new JTextField();
-		txtdireccion.setBounds(290,192,285,20);
+		txtdireccion.setBounds(290,190,285,20);
 		add(txtdireccion);
 
 		lblanio = new JLabel("Anio");
@@ -119,9 +113,12 @@ public class AddEnginerJunior extends JFrame  {
 		agregar.setActionCommand("agregar Junior");
 		add(agregar);
 		
-		lbl
+		lbltelefono = new JLabel("Telefono");
+		lbltelefono.setBounds(25, 278, 285, 20);
+		add(lbltelefono);
 		
 		txttelefono = new JTextField();
+		txttelefono.setBounds(290, 278, 285, 20);
 		add(txttelefono);
 
 		comboAnio = new JComboBox<Integer>();
@@ -223,17 +220,17 @@ public class AddEnginerJunior extends JFrame  {
 		this.txtdireccion = txtdireccion;
 	}
 	/**
-	 * metodo para obtener el año
-	 * <b> post </b> obtener el año
-	 * @return comboanio es el año que va a retornar
+	 * metodo para obtener el aï¿½o
+	 * <b> post </b> obtener el aï¿½o
+	 * @return comboanio es el aï¿½o que va a retornar
 	 */
 	public JComboBox<Integer> getComboAnio() {
 		return comboAnio;
 	}
 	/**
-	 * metoto para actualizar el año
-	 * <b> post </b> actualizar el año
-	 * @return comboAnio es el año que se va a actualizar
+	 * metoto para actualizar el aï¿½o
+	 * <b> post </b> actualizar el aï¿½o
+	 * @return comboAnio es el aï¿½o que se va a actualizar
 	 */
 	public void setComboAnio(JComboBox<Integer> comboAnio) {
 		this.comboAnio = comboAnio;

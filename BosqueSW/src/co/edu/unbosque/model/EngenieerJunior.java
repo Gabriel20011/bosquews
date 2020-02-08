@@ -29,6 +29,7 @@ public class EngenieerJunior extends PersonalSalary implements Serializable {
 			double salarioBase, String correo, String direccion, int anio, int level) {
 		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
 		this.level = level;
+		calcularSalario();
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -42,22 +43,22 @@ public class EngenieerJunior extends PersonalSalary implements Serializable {
 	public double calcularSalario() {
 		setSalarioBase(3500000);
 		if(calcularAntiguedad()>=2 && calcularAntiguedad()<4) {
-			setSalarioBase(getSalarioBase() * 5 / 100);
+			setSalarioBase(getSalarioBase() + (getSalarioBase() * 5 / 100));
 		}
 		if(calcularAntiguedad()>=4 && calcularAntiguedad()<8) {
-			setSalarioBase(getSalarioBase() * 10 / 100);
+			setSalarioBase(getSalarioBase() + (getSalarioBase() * 10 / 100));
 		}
 		if(calcularAntiguedad()>=8 && calcularAntiguedad()<16) {
-			setSalarioBase(getSalarioBase() * 15 / 100);
+			setSalarioBase(getSalarioBase() + (getSalarioBase() * 15 / 100));
 		}
 		if(calcularAntiguedad()>15) {
-			setSalarioBase(getSalarioBase() * 20 / 100);
+			setSalarioBase(getSalarioBase() + (getSalarioBase() * 20 / 100));
 		}
 		if(level>1 && level<=3) {
-			setSalarioBase(getSalarioBase() * 5 / 100);
+			setSalarioBase(getSalarioBase() + (getSalarioBase() * 5 / 100));
 		}
 		if(level>3 && level<=5) {
-			setSalarioBase(getSalarioBase() * 8 / 100);
+			setSalarioBase(getSalarioBase() + (getSalarioBase() * 8 / 100));
 		}
 		return getSalarioBase();		
 	} 

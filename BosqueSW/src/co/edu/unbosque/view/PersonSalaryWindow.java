@@ -24,6 +24,7 @@ public class PersonSalaryWindow extends JFrame {
 		setLocationRelativeTo(null);
 		getContentPane().setBackground(new Color(240,235,190));
 		getContentPane().setLayout(null);
+		addWindowListener(principal);
 		
 		btncomision = new JButton("Ingeniero Senior");
 		btncomision.setBounds(90,50,220,100);

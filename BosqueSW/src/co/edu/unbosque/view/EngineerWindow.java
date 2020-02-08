@@ -18,16 +18,16 @@ public class EngineerWindow extends JFrame{
 	/**
 	 * metodo constructor donde se inicializa la vista
 	 */
+
 	public EngineerWindow(MainWindow principal) {
-		
-		this.principal = principal;
-		setSize(225, 235);
+				setSize(225, 235);
 		setResizable(false);
 		setVisible(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		getContentPane().setBackground(new Color(240,235,190));
 		getContentPane().setLayout(null);
+		addWindowListener(principal);
 		
 		btncomision = new JButton("Ingeniero por Comision");
 		btncomision.setBounds(10,15,200,45);

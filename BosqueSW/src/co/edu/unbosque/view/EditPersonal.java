@@ -1,16 +1,14 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.JComboBox;
 
-public class AddEngineerSenior extends JFrame {
-	/**
-	 * Ventana para agregar un ingeniero Sennior
-	 */
+public class EditPersonal extends JFrame {
 	private JLabel lblcedula;
 	private JLabel lblnombre;
 	private JLabel lblapellido;
@@ -19,33 +17,25 @@ public class AddEngineerSenior extends JFrame {
 	private JLabel lblcorreo;
 	private JLabel lbldireccion;
 	private JLabel lblanio;
-	private JLabel lblnventas;
 	private JTextField txtnombre;
 	private JTextField txtcedula;
 	private JTextField txtapellido;
 	private JTextField txtcorreo;
 	private JTextField txttelefono;
 	private JTextField txtdireccion;
-	private JTextField txtnventas;
-	private JButton agregar;
+	private JButton editar;
 	private JButton menu;
 	private JComboBox<Character> comboGenero;
 	private JComboBox<Integer> comboAnio;
 
-	/**
-	 * constructor de la clase ingeniero Junior
-	 * <b> post </b> inicializar la vista
-	 */
-
-	public AddEngineerSenior(MainWindow principal) {
-		setTitle("Nuevo Ingeniero Senior");
+	public EditPersonal(MainWindow principal) {
 		setSize(600,500);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
-		addWindowListener(principal);
+		addWindowListener(principal);	
 
 		lblcedula = new JLabel("Cedula");
 		lblcedula.setBounds(45,15,155,25);
@@ -58,7 +48,7 @@ public class AddEngineerSenior extends JFrame {
 		lblnombre = new JLabel("Nombre");
 		lblnombre.setBounds(45,50,170,25);
 		add(lblnombre);
-		
+
 		txtnombre = new JTextField();
 		txtnombre.setBounds(290, 50, 285, 25);
 		add(txtnombre);
@@ -101,19 +91,11 @@ public class AddEngineerSenior extends JFrame {
 		lblanio.setBounds(45,226,110,19);
 		add(lblanio);
 
-		lblnventas = new JLabel("Numero de ventas");
-		lblnventas.setBounds(45,330,150,25);
-		add(lblnventas);
+		editar = new  JButton("CONFIRMAR");
+		editar.setBounds(25,400,200,60);
+		editar.setActionCommand("editar");
+		add(editar);
 
-		txtnventas = new JTextField();
-		txtnventas.setBounds(290,331,285,25);
-		add(txtnventas);
-
-		agregar = new  JButton("AGREGAR");
-		agregar.setBounds(25,400,200,60);
-		agregar.setActionCommand("agregar Senior");
-		add(agregar);
-		
 		menu = new JButton("Menu");
 		menu.addActionListener(principal);
 		menu.setBounds(355, 400, 200, 60);
@@ -122,7 +104,7 @@ public class AddEngineerSenior extends JFrame {
 		lbltelefono = new JLabel("Telefono");
 		lbltelefono.setBounds(45, 278, 285, 20);
 		add(lbltelefono);
-		
+
 		txttelefono = new JTextField();
 		txttelefono.setBounds(290, 278, 285, 20);
 		add(txttelefono);
@@ -134,87 +116,56 @@ public class AddEngineerSenior extends JFrame {
 		}
 		comboAnio.setBounds(290, 225, 285, 20);
 		add(comboAnio);
-		agregar.addActionListener(principal);
+		editar.addActionListener(principal);
 	}
-	/**
-	 * metodo para obtener el campo del mnombre del ingeniero
-	 * <b> post </b> obtener el nombre del usuario
-	 * @return txtnombre es el nombre del ingeniero
-	 */
+
 	public JTextField getTxtnombre() {
 		return txtnombre;
 	}
-	/**
-	 * metodo para obtener la cedula del ingeniero
-	 * <b> post </b> obtener la cedula del usuario
-	 * @return txtcedula es la cedula del ingeniero
-	 */
+	public void setTxtnombre(JTextField txtnombre) {
+		this.txtnombre = txtnombre;
+	}
 	public JTextField getTxtcedula() {
 		return txtcedula;
 	}
-	/**
-	 * metodo para obtener el apellido del ingeniero
-	 * <b> post </b> obtener el apellido del usuario
-	 * @return txtapellido es el apellido del ingeniero
-	 */
+	public void setTxtcedula(JTextField txtcedula) {
+		this.txtcedula = txtcedula;
+	}
 	public JTextField getTxtapellido() {
 		return txtapellido;
 	}
-	/**
-	 * metodo para obtener el correo del ingeniero
-	 * <b> post </b> obtener el correo del usuario
-	 * @return lblcedula es el correo del ingeniero
-	 */
+	public void setTxtapellido(JTextField txtapellido) {
+		this.txtapellido = txtapellido;
+	}
 	public JTextField getTxtcorreo() {
 		return txtcorreo;
 	}
-	/**
-	 * metodo para obtener el telefono del ingeniero
-	 * <b> post </b> obtener el telefono del usuario
-	 * @return lblcedula es el telefono del ingeniero
-	 */
+	public void setTxtcorreo(JTextField txtcorreo) {
+		this.txtcorreo = txtcorreo;
+	}
 	public JTextField getTxttelefono() {
 		return txttelefono;
 	}
-	/**
-	 * metodo para obtener la direccion del ingeniero
-	 * <b> post </b> obtener la direccion del usuario
-	 * @return lblcedula es la direccion del ingeniero
-	 */
+	public void setTxttelefono(JTextField txttelefono) {
+		this.txttelefono = txttelefono;
+	}
 	public JTextField getTxtdireccion() {
 		return txtdireccion;
 	}
-	/**
-	 * metodo para obtener las ventas del ingeniero
-	 * <b> post </b> obtener las ventas del usuario
-	 * @return lblcedula es las ventas del ingeniero
-	 */
-	public JTextField getTxtnventas() {
-		return txtnventas;
+	public void setTxtdireccion(JTextField txtdireccion) {
+		this.txtdireccion = txtdireccion;
 	}
-	/**
-	 * metodo para obtener el boton de agregar
-	 * <b> post </b> hacer una accion
-	 * @return agregar es el boton donde retorna una accion
-	 */
-	public JButton getAgregar() {
-		return agregar;
-	}
-	/**
-	 * metodo para obtener el check 
-	 * <b> post </b> obtener el genero de un ingeniero
-	 * @return comboGenero es el combo box del ingeniero
-	 */
 	public JComboBox<Character> getComboGenero() {
 		return comboGenero;
 	}
-	/**
-	 * metodo para obtener el a�o del usuario
-	 * <b> post </b> obtener el a�o de ingreso del usuario
-	 * @return comboAnio obtener el a�o de ingreso
-	 */
+	public void setComboGenero(JComboBox<Character> comboGenero) {
+		this.comboGenero = comboGenero;
+	}
 	public JComboBox<Integer> getComboAnio() {
 		return comboAnio;
 	}
-
+	public void setComboAnio(JComboBox<Integer> comboAnio) {
+		this.comboAnio = comboAnio;
+	}
 }
+

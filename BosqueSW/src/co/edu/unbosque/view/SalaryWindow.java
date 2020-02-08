@@ -17,8 +17,8 @@ public class SalaryWindow extends JFrame{
 	/**
 	 * Metodo constructor para inicializar la vista y obtener las diferentes caracteristicas
 	 */
+
 	public SalaryWindow(MainWindow principal) {
-		this.principal = principal;
 		setSize(225, 235);
 		setResizable(false);
 		setVisible(false);
@@ -26,6 +26,7 @@ public class SalaryWindow extends JFrame{
 		setLocationRelativeTo(null);
 		setBackground(new Color(240,235,190));
 		setLayout(null);
+		addWindowListener(principal);
 		
 		btnveringenieroS = new JButton("Ingenieros Senior");
 		btnveringenieroS.setForeground(new Color(240,235,190));
