@@ -20,6 +20,7 @@ public class Controller {
 	 */
 	public Controller() {
 		m = new Mundo();
+		clasificar();
 		ventana = new MainWindow(this);
 		ventana.setVisible(true);
 

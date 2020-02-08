@@ -16,23 +16,17 @@ public class EditPersonal extends JFrame {
 	private JLabel lbltelefono;
 	private JLabel lblcorreo;
 	private JLabel lbldireccion;
-	private JLabel lblventa;
 	private JLabel lblanio;
-	private JLabel lblnventas;
-	private JTextField txtventa;
 	private JTextField txtnombre;
 	private JTextField txtcedula;
 	private JTextField txtapellido;
 	private JTextField txtcorreo;
 	private JTextField txttelefono;
 	private JTextField txtdireccion;
-	private JTextField txtnventas;
 	private JButton editar;
 	private JButton menu;
-	private JComboBox<Integer> comboNivel;
 	private JComboBox<Character> comboGenero;
 	private JComboBox<Integer> comboAnio;
-	private MainWindow principal;
 
 	public EditPersonal(MainWindow principal) {
 		setSize(600,500);
@@ -41,6 +35,7 @@ public class EditPersonal extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(Color.LIGHT_GRAY);
 		setLayout(null);
+		addWindowListener(principal);
 
 		lblcedula = new JLabel("Cedula");
 		lblcedula.setBounds(45,15,155,25);
@@ -123,43 +118,6 @@ public class EditPersonal extends JFrame {
 		add(comboAnio);
 		editar.addActionListener(principal);
 	}
-	public void iniciarFormulario(String tipoPersonal) {
-		setTitle("Editar " +tipoPersonal);
-		if(tipoPersonal.contentEquals("Comission")) {
-			lblventa = new JLabel("Numero de ventas");
-			lblventa.setBounds(45,330,150,25);
-			add(lblventa);
-
-			txtventa = new JTextField();
-			txtventa.setBounds(290,331,285,25);
-			add(txtventa);
-		}
-		if(tipoPersonal.equals("Senior")) {
-			lblnventas = new JLabel("Numero de ventas");
-			lblnventas.setBounds(45,330,150,25);
-			add(lblnventas);
-
-			txtnventas = new JTextField();
-			txtnventas.setBounds(290,331,285,25);
-			add(txtnventas);
-		}if(tipoPersonal.equals("Junior")) {
-			comboNivel = new JComboBox<Integer>();
-			comboNivel.setBounds(290, 330, 285, 22);
-			comboNivel.addItem(1);
-			comboNivel.addItem(2);
-			comboNivel.addItem(3);
-			comboNivel.addItem(4);
-			comboNivel.addItem(5);
-			add(comboNivel);
-		}
-		
-	}
-		public JTextField getTxtventa() {
-			return txtventa;
-		}
-		public void setTxtventa(JTextField txtventa) {
-			this.txtventa = txtventa;
-		}
 		public JTextField getTxtnombre() {
 			return txtnombre;
 		}
@@ -195,18 +153,6 @@ public class EditPersonal extends JFrame {
 		}
 		public void setTxtdireccion(JTextField txtdireccion) {
 			this.txtdireccion = txtdireccion;
-		}
-		public JTextField getTxtnventas() {
-			return txtnventas;
-		}
-		public void setTxtnventas(JTextField txtnventas) {
-			this.txtnventas = txtnventas;
-		}
-		public JComboBox<Integer> getComboNivel() {
-			return comboNivel;
-		}
-		public void setComboNivel(JComboBox<Integer> comboNivel) {
-			this.comboNivel = comboNivel;
 		}
 		public JComboBox<Character> getComboGenero() {
 			return comboGenero;

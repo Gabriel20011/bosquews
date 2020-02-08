@@ -33,6 +33,7 @@ public class EngenieerJunior extends PersonalSalary implements Serializable {
 		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
 		this.level = level;
 		calcularSalario();
+
 	}
 	
 	/**

@@ -25,6 +25,7 @@ public class ListaPersonal extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBackground(new Color(240,235,190));
 		setLayout(null);
+		addWindowListener(principal);
 
 	}
 
@@ -114,14 +115,12 @@ public class ListaPersonal extends JFrame {
 
 		}
 		if (tipoPersonal.equals("Junior")) {
-
 			for (int i = 0 ; i < principal.getControlador().getM().geteJunior().size() ; i++) {
 				cedulas.add(principal.getControlador().getM().geteJunior().get(i).getCedula());
 			}
 
 		}
 		if (tipoPersonal.equals("Comission")) {
-
 			for (int i = 0 ; i < principal.getControlador().getM().getpComission().size() ; i++) {
 				cedulas.add(principal.getControlador().getM().getpComission().get(i).getCedula());
 			}
@@ -130,5 +129,4 @@ public class ListaPersonal extends JFrame {
 	public JList<String> getListaCedula() {
 		return listaCedula;
 	}
-	
 }
