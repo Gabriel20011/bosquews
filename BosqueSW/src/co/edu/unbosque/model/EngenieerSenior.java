@@ -9,6 +9,7 @@ public class EngenieerSenior extends PersonalSalary implements Serializable {
 		super(cedula, nombre, apellido, genero, telefono, salarioBase, correo, direccion, anio);
 		// TODO Auto-generated constructor stub
 		this.nVentas = nVentas;
+		calcularSalario();
 	}
 	@Override
 	public double calcularSalario() {
