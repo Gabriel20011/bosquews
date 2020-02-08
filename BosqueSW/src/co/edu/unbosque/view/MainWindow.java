@@ -15,9 +15,9 @@ import co.edu.unbosque.model.Personal;
 
 import co.edu.unbosque.controller.Controller;
 
-	/**
-	 * Es la ventana pricipal donde se puedn ver todos los tipos de ingeniero que se encuentran
-	 */
+/**
+ * Es la ventana pricipal donde se puedn ver todos los tipos de ingeniero que se encuentran
+ */
 
 public class MainWindow extends JFrame implements ActionListener, WindowListener {
 
@@ -35,7 +35,7 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 	/**
 	 * Metodo constructor donde se inicializa las caracteristicas de la vista
 	 */
-	
+
 	public MainWindow(Controller controlador) {
 		this.controlador = controlador;
 		intanciarPaneles();
@@ -76,7 +76,7 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 	 * Metodo para ocultar los paneles
 	 * <b> post </b> que los paneles ya no se muestren
 	 */
-		
+
 	public void ocultarPaneles() {
 		pTiposIngenieros.setVisible(false);
 		pSalaryEnginieers.setVisible(false);
@@ -107,7 +107,7 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 			ocultarPaneles();
 			listaPersonal.setVisible(false);
 			setVisible(true);
-			
+
 			if (informationPersonal != null) {
 				informationPersonal.getTxtapellido().setText("");
 				informationPersonal.getTxtnombre().setText("");
@@ -115,6 +115,9 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 				informationPersonal.getTxtdireccion().setText("");
 				informationPersonal.getTxtcorreo().setText("");
 				informationPersonal.getTxttelefono().setText("");
+				informationPersonal.getTxtanio().setText("");
+				informationPersonal.getTxtgenero().setText("");
+				informationPersonal.getTxtSalario().setText("");
 			}
 		}
 		if (accion == "Ingeniero por Comision") {
@@ -306,33 +309,37 @@ public class MainWindow extends JFrame implements ActionListener, WindowListener
 			else {
 				JOptionPane.showMessageDialog(null, "NO SE HA ELIMINADO");
 			}
-			if(accion == "EliminarJunior") {
-				if(controlador.eliminar(listaPersonal.getListaCedula().getSelectedValue())) {
-					JOptionPane.showMessageDialog(null, "SE HA ELIMINADO");
-					listaPersonal.setVisible(false);
-					listaPersonal = new ListaPersonal(this);
-					listaPersonal.iniciarBotones("Junior");
-					listaPersonal.setVisible(true);
+		}
+		if(accion == "EliminarJunior") {
 
-				}
-				else {
-					JOptionPane.showMessageDialog(null, "NO SE HA ELIMINADO");
-				}
-				if(accion == "EliminarSenior") {
-					if(controlador.eliminar(listaPersonal.getListaCedula().getSelectedValue())) {
-						JOptionPane.showMessageDialog(null, "SE HA ELIMINADO");
-						listaPersonal.setVisible(false);
-						listaPersonal = new ListaPersonal(this);
-						listaPersonal.iniciarBotones("Senior");
-						listaPersonal.setVisible(true);
+			if(controlador.eliminar(listaPersonal.getListaCedula().getSelectedValue())) {
+				JOptionPane.showMessageDialog(null, "SE HA ELIMINADO");
+				listaPersonal.setVisible(false);
+				listaPersonal = new ListaPersonal(this);
+				listaPersonal.iniciarBotones("Junior");
+				listaPersonal.setVisible(true);
 
-					}
-					else {
-						JOptionPane.showMessageDialog(null, "NO SE HA ELIMINADO");
-					}
-				}
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "NO SE HA ELIMINADO");
 			}
 		}
+		if(accion == "EliminarSenior") {
+
+			if(controlador.eliminar(listaPersonal.getListaCedula().getSelectedValue())) {
+				JOptionPane.showMessageDialog(null, "SE HA ELIMINADO");
+				listaPersonal.setVisible(false);
+				listaPersonal = new ListaPersonal(this);
+				listaPersonal.iniciarBotones("Senior");
+				listaPersonal.setVisible(true);
+
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "NO SE HA ELIMINADO");
+			}
+		}
+
+
 		if(accion == "modificar") {
 			ePersonal.setVisible(true);
 			listaPersonal.setVisible(false);
